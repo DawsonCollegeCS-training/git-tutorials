@@ -60,7 +60,7 @@ works in future labs._
 
 ## Let's get started!
 
-[Start the lab here](Labtext1.md)
+[Start the lab here](01_basics.md)
 
 
 ## Resources

@@ -337,7 +337,8 @@ untracked changes --(git add)-&gt; staging area --(git commit)--&gt; repository
 
 ## Set up a server side repo (a remote repo)
 
-There are instructions for both gitlab and github here.
+These instructions focus on gitlab, but the process is very similar with
+other hosts like github or bitbucket. If you want to see github screenshots, see [github instructions](01_basics_github.md)
 
 You will create an empty public repo and then "push" your
 local repo to that public location, effectively making a remote copy.
@@ -349,11 +350,7 @@ local repo to that public location, effectively making a remote copy.
 > of __academic integrity__. Publishing or sharing graded work with
 > current or future students is unfair and devalues students' hard work.
 
-### Using gitlab
-
 If you don't have a gitlab account create one <https://gitlab.com/users/sign_in>.
-Please follow these guidelines when creating an account:
-<https://gitlab.com/snippets/1672514>
 
 1.  Create a new Project repo click
     on Project Dashboard then __New Project__ button:
@@ -370,27 +367,6 @@ Effectively you just did this on gitlab, but through their web UI:
         ``` {.bash}
         mkdir planets;cd planets;git init .
         ```
-
-
-### Using github
-1.  If you don't have a github account create one
-    <https://github.com/join?source=header-home>
-2.  To create a new repo click
-    on the plus sign:
-    _(Do NOT create a README nor any other files)_
-    ![](github-images/github-create-repo.png "fig:github-images/github-create-repo.png  ")
-
-3.   If the repo is created properly you will see this;
-    ![](github-images/github-create-repo2.png "fig:github-images/github-create-repo2.png")
-
-Now you have an empty repo called planets on the github server.
-    Effectively you just did this on github, but through their web UI:
-
-            ``` {.bash}
-            mkdir planets;cd planets;git init .
-            ```
-
-
 
 ## Add a remote
 
@@ -460,9 +436,6 @@ To https://gitlab.com/campbe13/lab1-using-git.git
 Reload the project page: you should see that your local history is now on the
 server.
 
-github
-![](github-images/github-create-repo5.png "fig:github-images/github-create-repo5.png")
-gitlab
 ![](gitlab-images/gitlab-add-project5.PNG "fig:gitlab-images/gitlab-add-project5.PNG")
 
 ## Review: add, commit, push
