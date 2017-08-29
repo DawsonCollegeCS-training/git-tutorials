@@ -13,7 +13,7 @@ Links to specific sources of material are provided in-line.
 ## Software
 
 Except where otherwise noted, the example programs and other software is
-provided under the [GNU General Public License](LICENCE).
+provided under the [GNU General Public License](LICENSE).
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
