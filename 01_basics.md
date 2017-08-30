@@ -358,15 +358,15 @@ If you don't have a gitlab account create one <https://gitlab.com/users/sign_in>
 2.  Fill in the form to create a public project called __planets__.
     ![](gitlab-images/gitlab-add-project2.PNG "fig:gitlab-images/gitlab-add-project2.PNG")
 3.  If the repo is created properly you will see this;
-     (Do NOT create a README nor any other files)
+    (Do NOT create a README nor any other files)
     ![](gitlab-images/gitlab-add-project3.PNG "fig:gitlab-images/gitlab-add-project3.PNG")
 
 Now you have an empty repo called planets on the gitlab server.
 Effectively you just did this on gitlab, but through their web UI:
 
-        ``` {.bash}
-        mkdir planets;cd planets;git init .
-        ```
+```bash
+mkdir planets;cd planets;git init .
+```
 
 ## Add a remote
 
