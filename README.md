@@ -72,4 +72,4 @@ For working on this repo:
 -   [original lab 1 on mediawiki](http://wiki.pcampbell.profweb.ca/index.php/Introductory\_Git\_Lab)
 -   [differences between github/gitlab/bitbucket](https://about.gitlab.com/2016/01/27/comparing-terms-gitlab-github-bitbucket/)
 
-![xkcd on git](https://imgs.xkcd.com/comics/git_2x.png)
+<img src="https://imgs.xkcd.com/comics/git_2x.png" width=300 alt="xkcd on git"/>
