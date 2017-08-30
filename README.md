@@ -2,14 +2,13 @@
 
 ## What is this?
 
-Hi! If you're reading this text in a web browser, you're probably at the URL for a Gitlab project
-page. This tutorial is stored in a git repository hosted on gitlab.com, and gitlab.com provides
-a web-based user interface for viewing the content of the repository, which is what you're looking
-at right now.
+Hi! You have found a series of tutorials about git.
 
-In this tutorial, you'll create a repository on your computer and use it to learn some git
-commands. Then you'll also publish your repository to a remote server like gitlab.com and get a
-glimpse of how git is used for collaboration.
+If you're reading this text in a web browser, you're probably at the URL for a 
+_GitHub/GitLab/BitBucket/..._ project page. (From now on, we'll write GitBlarg to mean any one 
+of _GitHub/GitLab/BitBucket/..._). This tutorial is stored in a git repository hosted on 
+_gitblarg_.com, and _gitblarg_.com provides a web-based user interface for viewing the content of 
+the repository, which is what you're looking at right now.
 
 ## What is git?
 
@@ -29,7 +28,7 @@ _plain-text_ files like software source code.
 
 ## How do I use git?
 
-We'll go through this step-by-step in the actual tutorial, but here's an overview.
+We'll go through this step-by-step in the actual tutorials, but here's an overview.
 
 ### Use the `git` command
 
@@ -59,6 +58,10 @@ those changes together to make progress on your team project. _We'll learn more 
 works in future labs._
 
 ## Let's get started!
+
+In the first lab, you'll create a repository on your computer and use it to learn some git
+commands. Then you'll also publish your repository to a remote server like gitlab.com and get a
+glimpse of how git is used for collaboration.
 
 [Start the lab here](01_basics.md)
 
