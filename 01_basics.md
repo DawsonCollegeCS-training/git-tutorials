@@ -77,9 +77,9 @@ $ git config -h
 $ git config --help
 ```
 
-## Create a local repo[^sccreate]
+## Create a local repo
 
-[^sccreate]: ref <http://swcarpentry.github.io/git-novice/03-create/>
+(Adapted from: <http://swcarpentry.github.io/git-novice/03-create/>)
 
 We are going to make an example local repository. Do this on
 the h: drive
@@ -121,9 +121,9 @@ nothing to commit (create/copy files and use "git add" to track)
 
 _Use `git status` often: it can give you hints about how to fix mistakes._
 
-## Add files to the repo[^swcchanges]
+## Add files to the repo
 
-[^swcchanges]:  <http://swcarpentry.github.io/git-novice/04-changes/>
+(Adapted from: <http://swcarpentry.github.io/git-novice/04-changes/>)
 
 Create a file in the planets directory
 
@@ -422,6 +422,7 @@ So this command is saying: take all the commits in history up to the point
 labeled "master" and send them to the remote called "origin"
 
 We need to authenticate on the server:
+
 ![](gitlab-images/http-auth-windows.PNG "fig:gitlab-images/http-auth-windows.PNG")
 ``` {.bash}
 Counting objects: 3, done.
