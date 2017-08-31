@@ -4,10 +4,10 @@
 
 Hi! You have found a series of tutorials about git.
 
-If you're reading this text in a web browser, you're probably at the URL for a 
-_GitHub/GitLab/BitBucket/..._ project page. (From now on, we'll write GitBlarg to mean any one 
-of _GitHub/GitLab/BitBucket/..._). This tutorial is stored in a git repository hosted on 
-_gitblarg_.com, and _gitblarg_.com provides a web-based user interface for viewing the content of 
+If you're reading this text in a web browser, you're probably at the URL for a
+_GitHub/GitLab/BitBucket/..._ project page. (From now on, we'll write GitBlarg to mean any one
+of _GitHub/GitLab/BitBucket/..._). This tutorial is stored in a git repository hosted on
+_gitblarg_.com, and _gitblarg_.com provides a web-based user interface for viewing the content of
 the repository, which is what you're looking at right now.
 
 ## What is git?
@@ -63,7 +63,8 @@ In the first lab, you'll create a repository on your computer and use it to lear
 commands. Then you'll also publish your repository to a remote server like gitlab.com and get a
 glimpse of how git is used for collaboration.
 
-[Start the lab here](01_basics.md)
+* [Start the lab here](01_basics.md)
+* [Generate ssh keys here](gen-ssh-keys/01_.md)
 
 
 ## Resources
