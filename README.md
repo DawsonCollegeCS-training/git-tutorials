@@ -64,7 +64,7 @@ commands. Then you'll also publish your repository to a remote server like gitla
 glimpse of how git is used for collaboration.
 
 * [Start the lab here](01_basics.md)
-* [Generate ssh keys here](gen-ssh-keys/01_.md)
+* [Generate ssh keys here](gen-ssh-keys/01_keys.md)
 
 
 ## Resources
