@@ -403,7 +403,7 @@ So let's move our commit to a new branch.
     Author: Ada Lovelace <ada@findingada.org>
     Date:   Fri Sep 1 01:08:16 2017 -0400
 
-    Remove commented-out code
+    Add name to README
 
     commit 83bc44725ae6ec90211cf0c3d85f37273914de8a (origin/master) <-- last published commit
     Author: Maja Frydrychowicz <mjzffr@gmail.com>
@@ -484,7 +484,7 @@ $ git checkout master <-- if you're already on master this won't hurt
 (master)$ git checkout lab2_yourname
 ```
 
-2. Add a `Gender` called `NONE` to the `Gender` enum in `src/person/Person.java`.
+2. Add a `Gender` called `NONE` to the `Gender` enum in `src/review/Person.java`.
 
 3. Fix the spelling error in `src/geometry/PointUtils.java`              
    in the line `System.out.println("After srting");` -- should be "sorting"
