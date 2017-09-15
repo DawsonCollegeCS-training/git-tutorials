@@ -18,10 +18,14 @@ a version that might be released to users, for example.
 
 ### Terminology
 
-* __gitblarg__: Generic term to mean whichever repository hosting service used
-for your project: GitHub, GitLab, BitBucket, etc. The workflow is pretty much
-the same in all these services.
-* __P/MR__:  Request to merge a feature branch into a another branch in the repository; the request is submitted through the Web UI of gitblarg. Different terms are used for this on different services: in GitHub this is called a Pull Request, in GitLab it's called a Merge Request. In this document, we will call it a P/MR. _A P/MR is reviewed and merged online in the Web UI provided by gitblarg._
+*   __gitblarg__: Generic term to mean whichever repository hosting service used
+    for your project: GitHub, GitLab, BitBucket, etc. The workflow is pretty much
+    the same in all these services.
+*   __P/MR__:  Request to merge a feature branch into a another branch in the repository; the     
+    request is submitted through the Web UI of gitblarg. Different terms are used for this on
+    different services: in GitHub this is called a Pull Request, in GitLab it's called a Merge
+    Request. In this document, we will call it a P/MR. _A P/MR is reviewed and merged online in the
+    Web UI provided by gitblarg._
 
 ## Code Review
 
@@ -33,21 +37,21 @@ P/MR -- and one or two "reviewers" -- the people who read the code and comment a
 
 As a reviewer, you are not only checking if your teammate's code is "good enough". Code review is a key way in which teammates share knowledge about the project and learn from each other. The goals of code review are:
 
-*  Understand the problem being solved by the P/MR.
+*   Understand the problem being solved by the P/MR.
 
     This should be clear
     from the commit message(s) and the P/MR description. Ask for clarifications
     as needed.
 
-*  Understand the proposed code.
+*   Understand the proposed code.
 
     Feel free to ask the author questions if parts are unclear to you.
 
-*  Identify what works especially well in the code: feel free to
+*   Identify what works especially well in the code: feel free to
     write positive comments about something that the author has done
     particularly well.
 
-*  Propose changes that would increase the quality of the code:
+*   Propose changes that would increase the quality of the code:
 
     * Is the code readable, is the style consistent, is it documented?
     * Is the code correct? Does it solve the problem? Are there simpler or    
@@ -55,16 +59,17 @@ As a reviewer, you are not only checking if your teammate's code is "good enough
     * Is the code well-tested? Do the tests pass?
 
 #### Review flags
+
 When participating in discussion on P/MRs, use a common shorthand to signal
 specific requests and official responses/decisions:
 
-* `f?` - Please give me some informal feedback on this work-in-progress.
-* `f-` - I disagree with the general direction of this code. A different
-approach is needed.
-* `f+` - I think you're on the right track, keep going.
-* `r?` - Please review this finished code so that it can be merged.
-* `r-` - This code needs additional changes before it can be merged.
-* `r+` - This code is correct and complete, let's merge it!
+*   `f?` - Please give me some informal feedback on this work-in-progress.
+*   `f-` - I disagree with the general direction of this code. A different
+    approach is needed.
+*   `f+` - I think you're on the right track, keep going.
+*   `r?` - Please review this finished code so that it can be merged.
+*   `r-` - This code needs additional changes before it can be merged.
+*   `r+` - This code is correct and complete, let's merge it!
 
 
 ### How to give good code review
@@ -76,9 +81,12 @@ tests.
 Write line-comments in the P/MR with your questions, opinions and suggestions.
 
 Keep your feedback constructive: write specific comments that
-are polite and respectful. Be clear about which changes are necessary to get an `r+` and which changes are optional suggestions.
+are polite and respectful. Be clear about which changes are necessary to get an `r+` and which
+changes are optional suggestions.
 
-When you're done, write a summary comment about the whole P/MR that communicates your final decision (f+,f-,r+,r-) and brief overview of the changes needed. \@mention the author so they get a notification about your
+When you're done, write a summary comment about the whole P/MR that communicates your final
+decision (f+,f-,r+,r-) and brief overview of the changes needed. `@`-mention the author so they get
+a notification about your
 finished review.
 
 ### How to receive good code review
@@ -159,98 +167,102 @@ Work on your assignment in logical pieces, with each piece developed
 on a separate branch. If it's a small/simple individual assignment,
 maybe you only need one feature branch for all your work.
 
-1. Make sure that you're on your staging branch, that the staging branch is up-to-date, and start new branch:
+1.  Make sure that you're on your staging branch, that the staging branch is up-to-date, and start
+    new branch:
 
-```
-git checkout Asst5
-# in case new code from teammates has been merged on your staging branch
-git pull origin Asst5
-git checkout -b featureA
-```
+    ```
+    git checkout Asst5
+    # in case new code from teammates has been merged on your staging branch
+    git pull origin Asst5
+    git checkout -b featureA
+    ```
 
-__Never commit or push any protected branches__. In class assignments, your
-submission will be merged into master after it's graded. On the staging
-branch, only team-approved, working code can land by merging feature branches
-via P/MRs. If you're a team of
-one, you will decide when to merge feature branches.
+    __Never commit or push any protected branches__. In class assignments, your
+    submission will be merged into master after it's graded. On the staging
+    branch, only team-approved, working code can land by merging feature branches
+    via P/MRs. If you're a team of
+    one, you will decide when to merge feature branches.
 
-2. Work work work
+2.  Work work work
 
-```
-git add somefiles
-git commit
-...
-```
+    ```
+    git add somefiles
+    git commit
+    ...
+    ```
 
-3. You can push your branch to the remote whenever you like to back-up your work or make it visible to your teammates.
+3.  You can push your branch to the remote whenever you like to back-up your work or make it
+    visible to your teammates.
 
-```
-git push origin featureA
-```
+    ```
+    git push origin featureA
+    ```
 
-4. You can pull your branch from the remote if you switch to a different
-computer
+4.  You can pull your branch from the remote if you switch to a different
+    computer
 
-```
-# first time on new computer
-git clone url/to/submission/repo
-cd path/to/submission/repo
-git fetch origin featureA:featureA
-# subsequent times just do
-git pull origin featureA
-```
+    ```
+    # first time on new computer
+    git clone url/to/submission/repo
+    cd path/to/submission/repo
+    git fetch origin featureA:featureA
+    # subsequent times just do
+    git pull origin featureA
+    ```
 
 ### Get feedback from teammates
 
-5. When you want feedback on your work, open a P/MR for your feature branch against the
-staging branch. Do this when you want early feedback from teammates (__f?__),
-or when you want official code review (__r?__) from teammates so that your
-work can be merged into the staging branch.
+5.  When you want feedback on your work, open a P/MR for your feature branch against the
+    staging branch. Do this when you want early feedback from teammates (__f?__),
+    or when you want official code review (__r?__) from teammates so that your
+    work can be merged into the staging branch.
 
-```
-# in case teammates have landed new work on staging branch, bring it up to date
-git checkout Asst5
-git pull origin Asst5
-git checkout featureA
-# replay your changes onto latest Asst5 and fix any conflicts
-git rebase Asst5
-git push origin featureA
-```
+    ```
+    # in case teammates have landed new work on staging branch, bring it up to date
+    git checkout Asst5
+    git pull origin Asst5
+    git checkout featureA
+    # replay your changes onto latest Asst5 and fix any conflicts
+    git rebase Asst5
+    git push origin featureA
+    ```
 
-Then use the gitblarg UI online to open a P/MR against the Asst5 branch and flag a teammate for review or discussion.
+    Then use the gitblarg UI online to open a P/MR against the Asst5 branch and flag a teammate for
+    review or discussion.
 
 ### Incorporating Feedback
 
-6. When you get feedback (__f-, r-__) on your P/MR and need to change things, just make new commits on your feature branch and push again.
+6.  When you get feedback (__f-, r-__) on your P/MR and need to change things, just make new    
+    commits on your feature branch and push again.
 
-```
-git checkout featureA
-git add; git commit
-git push origin featureA
-```
+    ```
+    git checkout featureA
+    git add; git commit
+    git push origin featureA
+    ```
 
-The new commits will appear on the P/MR, and you can ask your teammates for
-feedback again.
+    The new commits will appear on the P/MR, and you can ask your teammates for
+    feedback again.
 
-7. (Optional) Once your feature is approved in the P/MR, you can clean up your
-commits and commit messages if needed. Modify your commit message(s) to
-indicate the author(s) and reviewer(s) of each commit.
+7.  (Optional) Once your feature is approved in the P/MR, you can clean up your
+    commits and commit messages if needed. Modify your commit message(s) to
+    indicate the author(s) and reviewer(s) of each commit.
 
-```
-# n is the number of commits you want to change (e.g. the last 5 commits)
-git rebase -i HEAD~n
-# We need -f to "force" the push because rebase rewrites history
-# It's okay to rewrite history because this is your own personal feature
-# branch
-git push -f origin featureA
-```
+    ```
+    # n is the number of commits you want to change (e.g. the last 5 commits)
+    git rebase -i HEAD~n
+    # We need -f to "force" the push because rebase rewrites history
+    # It's okay to rewrite history because this is your own personal feature
+    # branch
+    git push -f origin featureA
+    ```
 
-_Note:_ Never force-push (git push -f) to any protected branch, because this
-rewrites history that you share with your teammates! If you force push, your
-teammates will have trouble pulling and will have to waste their time fixing
-their repo! (It's okay to force push to a branch that you are working on alone
-because it doesn't contain any shared history so it won't ruin anything for
-anyone else.)
+    _Note:_ Never force-push (git push -f) to any protected branch, because this
+    rewrites history that you share with your teammates! If you force push, your
+    teammates will have trouble pulling and will have to waste their time fixing
+    their repo! (It's okay to force push to a branch that you are working on alone
+    because it doesn't contain any shared history so it won't ruin anything for
+    anyone else.)
 
 ### If you are working alone
 
@@ -265,17 +277,18 @@ git merge featureA
 
 ### When your feature is approved by the team
 
-8. When your P/MR is approved (__r+__ from teammate), use the gitblarg web UI to __merge__ it (click the Accept/Merge button): now featureA gets merged into the staging branch (Asst5).
+8.  When your P/MR is approved (__r+__ from teammate), use the gitblarg web UI to __merge__ it
+    (click the Accept/Merge button): now featureA gets merged into the staging branch (Asst5).
 
-9. Pull the new commits from the remote. The commits you made for featureA are
-now on the Asst5 branch.
+9.  Pull the new commits from the remote. The commits you made for featureA are
+    now on the Asst5 branch.
 
-```
-git checkout Asst5
-git pull origin Asst5
-```
+    ```
+    git checkout Asst5
+    git pull origin Asst5
+    ```
 
-__(Optional)__ Now you can also safely delete your featureA branch locally and on
+_(Optional)_ Now you can also safely delete your featureA branch locally and on
 the remote because it's been merged. To delete it on the remote, find the
 delete button in the web UI. To delete it from your local repo:
 
@@ -284,19 +297,18 @@ git branch -d featureA
 ```
 
 10. Keep working on more parts of the assignment on new branches. (Repeat the
-  above process as needed. You can alternate working on several features at
-  once; you just need to keep the different branches up to date.)
+    above process as needed. You can alternate working on several features at
+    once; you just need to keep the different branches up to date.)
 
-```
-git checkout Asst5
-git checkout -b featureB
-```
-
+    ```
+    git checkout Asst5
+    git checkout -b featureB
+    ```
 
 ### When you are ready to submit your finished work (for whole team/assignment)
 
 You submit your work by making a P/MR of your staging branch (Asst5) against the master branch.  
-Only one teammate needs to do this:
+__Only one teammate__ needs to do this:
 
 ```
 # pull in all the latest changes on the staging branch (to make sure you have
@@ -316,9 +328,11 @@ request review from your teacher.
 
 ### When you want to incorporate feedback from teacher
 
-After grading, teacher might require you to make some changes before approving your "submission P/MR" and merging into master.
+After grading, teacher might require you to make some changes before approving your "submission
+P/MR" and merging into master.
 
-This is the same as working on a new feature. Start a feature branch based on the latest version of your staging branch, Asst5. Make your changes. Open a P/MR of the _feature branch
+This is the same as working on a new feature. Start a feature branch based on the latest version of
+your staging branch, Asst5. Make your changes. Open a P/MR of the _feature branch
 against Asst5_. The team approves the P/MR and merges it to the Asst5 branch.
 
 After merging, there are new commits on your Asst5 branch. These commits
