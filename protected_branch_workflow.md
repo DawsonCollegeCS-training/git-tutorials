@@ -212,27 +212,27 @@ maybe you only need one feature branch for all your work.
 
 ### Get feedback from teammates
 
-5.  When you want feedback on your work, open a P/MR for your feature branch against the
-    staging branch. Do this when you want early feedback from teammates (__f?__),
-    or when you want official code review (__r?__) from teammates so that your
-    work can be merged into the staging branch.
+When you want feedback on your work, open a P/MR for your feature branch against the
+staging branch. Do this when you want early feedback from teammates (__f?__),
+or when you want official code review (__r?__) from teammates so that your
+work can be merged into the staging branch.
 
-    ```
-    # in case teammates have landed new work on staging branch, bring it up to date
-    git checkout Asst5
-    git pull origin Asst5
-    git checkout featureA
-    # replay your changes onto latest Asst5 and fix any conflicts
-    git rebase Asst5
-    git push origin featureA
-    ```
+```
+# in case teammates have landed new work on staging branch, bring it up to date
+git checkout Asst5
+git pull origin Asst5
+git checkout featureA
+# replay your changes onto latest Asst5 and fix any conflicts
+git rebase Asst5
+git push origin featureA
+```
 
-    Then use the gitblarg UI online to open a P/MR against the Asst5 branch and flag a teammate for
-    review or discussion.
+Then use the gitblarg UI online to open a P/MR against the Asst5 branch and flag a teammate for
+review or discussion.
 
 ### Incorporating Feedback
 
-6.  When you get feedback (__f-, r-__) on your P/MR and need to change things, just make new    
+1.  When you get feedback (__f-, r-__) on your P/MR and need to change things, just make new    
     commits on your feature branch and push again.
 
     ```
@@ -244,7 +244,7 @@ maybe you only need one feature branch for all your work.
     The new commits will appear on the P/MR, and you can ask your teammates for
     feedback again.
 
-7.  (Optional) Once your feature is approved in the P/MR, you can clean up your
+2.  (Optional) Once your feature is approved in the P/MR, you can clean up your
     commits and commit messages if needed. Modify your commit message(s) to
     indicate the author(s) and reviewer(s) of each commit.
 
@@ -277,10 +277,10 @@ git merge featureA
 
 ### When your feature is approved by the team
 
-8.  When your P/MR is approved (__r+__ from teammate), use the gitblarg web UI to __merge__ it
+1.  When your P/MR is approved (__r+__ from teammate), use the gitblarg web UI to __merge__ it
     (click the Accept/Merge button): now featureA gets merged into the staging branch (Asst5).
 
-9.  Pull the new commits from the remote. The commits you made for featureA are
+2.  Pull the new commits from the remote. The commits you made for featureA are
     now on the Asst5 branch.
 
     ```
@@ -288,15 +288,14 @@ git merge featureA
     git pull origin Asst5
     ```
 
-_(Optional)_ Now you can also safely delete your featureA branch locally and on
-the remote because it's been merged. To delete it on the remote, find the
-delete button in the web UI. To delete it from your local repo:
+3.  _(Optional)_ Now you can also safely delete your featureA branch locally and on
+    the remote because it's been merged. To delete it on the remote, find the
+    delete button in the web UI. To delete it from your local repo:
 
-```
-git branch -d featureA
-```
-
-10. Keep working on more parts of the assignment on new branches. (Repeat the
+    ```
+    git branch -d featureA
+    ```
+4.  Keep working on more parts of the assignment on new branches. (Repeat the
     above process as needed. You can alternate working on several features at
     once; you just need to keep the different branches up to date.)
 
