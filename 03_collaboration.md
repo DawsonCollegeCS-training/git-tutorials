@@ -40,7 +40,7 @@ be approved and merged.
 *   The team agrees in advance which branches are protected (one or more branches). Usually,
     `master` is protected.
 *   The team agrees what conditions must be met to merge into a protected branch. Example:
-    after a feature branch is reviewed and approved by two team members, the second reviewer
+    after a feature branch is reviewed and approved by two team members, the author
     may merge.
 *   Otherwise, no one pushes any commits to the protected branches on the shared remote repo.
 *   Once a commit is pushed on a protect branch on the remote, it cannot be modified or
@@ -61,24 +61,38 @@ We will practice collaboration with branches in a repo called `git-playground`.
 
 3.  Clone the git-playground repo in your `tutorial3` directory.
 
-   ```
-   cd tutorial3
-   git clone some/url/to/git-playground
-   ```
+     ```
+     cd tutorial3
+     git clone some/url/to/git-playground
+     ```
 
 ## Fetch a branch
 
 Let's say that you are collaborating with a team on `git-playground`, and it's been
 decided that `master` and `beta` are protected branches. When you clone you get
-the master branch by default, but you need to fetch beta the first time you use it.
+the master branch by default, but you may need to fetch beta the first time you use it.
+
+Check which branches are available.
 
 ```
-# git branch shows that you only have master branch now
 (master)$ git branch
 * master
-# download the beta branch from origin and call it beta locally, too
+```
+
+Try to checkout the beta branch.
+
+```
+(master)$ git checkout beta
+Switched to a new branch 'beta'
+Branch beta set up to track remote branch beta from origin.
+```
+
+If the above doesn't work and git says beta doesn't exist, you can download the beta branch from origin and call it beta locally as follows:
+
+```
 (master)$ git fetch origin beta:beta
 ```
+
 If you do this right, `git branch` should now list both `master` and `beta`
 and `git log beta` should show the following as the most-recent commit:
 
@@ -103,10 +117,10 @@ You've agreed that your team will synchronize their work on the beta branch.
     (beta)$ git pull origin beta
     ```
 
-    In this case there are no new changes because we just fetched beta, moments ago, but
+    In this case there are no new changes because we just fetched beta moments ago, but
     you will have to `pull` all protected branches from time to time to stay up to date.
 
-2.  Now create your feature branch:
+2.  Now create your feature branch, based on beta:
 
     ```
     (beta)$ git checkout -b readmeUpdate
@@ -137,15 +151,17 @@ You've agreed that your team will synchronize their work on the beta branch.
     Mycroft Holmes
     ```
 
-4.  Up to now, we've always committed entire files, but what if you only want to staged
+### Staging a subset of changes
+
+5.  Up to now, we've always committed entire files, but what if you only want to stage
     and commit a subset of your changes? Use `git add -p`! It shows you a diff and
     lets you choose which pieces (called _hunks_) to add.
 
-    Let's try to only add the part of the README we added at the end,
-    starting at `## Conventions`
+    Let's try to only add the part of the README after the section `## Conventions`
 
     Enter `git add -p`. You'll see a diff, the question __"Stage this hunk?"__
-    and a list of options at the bottom. The
+    and a list of options at the bottom. You can always enter `?` to see a description of
+    all the options. The
     main options to pay attention to are `y` (yes), `n` (no), `q` (quit), and `s` (split).
 
     The first hunk you are presented with shows all your README changes. Choose _s_ to
@@ -186,7 +202,7 @@ You've agreed that your team will synchronize their work on the beta branch.
     ```
 
     After pressing __n__, we get a second hunk, which shows only the second part of
-    our README change, as desired, so press __y__ for yes:
+    our README change (see below). This is the part we want, so press __y__ for yes:
 
     ```
     @@ -3,2 +5,6 @@
@@ -208,13 +224,13 @@ You've agreed that your team will synchronize their work on the beta branch.
     Changes to be committed:
     (use "git reset HEAD <file>..." to unstage)
 
-          modified:   README.md
+            modified:   README.md
 
     Changes not staged for commit:
       (use "git add <file>..." to update what will be committed)
       (use "git checkout -- <file>..." to discard changes in working directory)
 
-            modified:   README.md
+            modified:   README.md    <----- there are other changes that we haven't staged!
 
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
@@ -222,7 +238,7 @@ You've agreed that your team will synchronize their work on the beta branch.
             Authors.txt
     ```
 
-    and `git diff --staged` will show:
+    and `git diff --staged` will show only the Conventions section:
 
     ```
     diff --git a/README.md b/README.md
@@ -241,7 +257,11 @@ You've agreed that your team will synchronize their work on the beta branch.
     +In this repo, we agree to treat master and beta as protected branches.
     ```
 
-6.  Commit your first README change: `git commit -m "List protected branches in README"`
+6.  Commit your first README change, that you just staged:
+
+    ```
+    git commit -m "List protected branches in README"
+    ```
 
 7.  Add and commit your other changes:
 
@@ -279,10 +299,17 @@ web UI to open a pull request/merge request and get code review, which is what w
     `readmeUpdate_yourname` branch. __Notice that there's a green checkmark__ that says
     this branch can be merged automatically.
 
+__The direction of the merge is important.__ When you merge `readmeUpdate_yourname` into `beta`,
+`beta` receives the commits `readmeUpdate_yourname`. We say that `beta` is the "base" branch.
+
+```
+readmeUpdate_yourname ----merge----> beta (base)
+```
+
 ## Merging a feature branch
 
-What does merging do? It reunites two diverging branches into one, thus incorporating
-changes from a feature branch into a protected branch:
+What does merging do? It reunites two diverging branches into one. In this case, we
+are incorporating a changes from a feature branch (readmeUpdate) into a protected branch (beta):
 
 ```
           o--o--o  readmeUpdate
@@ -301,8 +328,8 @@ amounts to running the `git merge` command on the remote repository.
 __Normally you'd merge branches by using the web UI__, but in this exercise we will
 perform a merge at the command-line so you can see how it works.
 
-1.  Check out the branch we want to merge into, which is `beta`. This is called the `base`
-    branch or the `target` branch.
+1.  Check out the branch we want to merge __into__, which is `beta`. This is called the `base`
+    branch or the `target` branch. It is going to receive new commits from `readmeUpdate`.
 
     ```
     git checkout beta
@@ -318,6 +345,8 @@ perform a merge at the command-line so you can see how it works.
 3. If you look at `git log` now, you should see that the history of `beta` shows the
    merge commit as well as the commits from `readmeUpdate`.
 
+Again, the direction of the merge is important. We merged readmeUpdate into beta.
+Merging beta into readmeUpdate is __not__ the same thing.
 
 4. Now that the `readmeUpdate` branch has been merged, you can delete it.
 
@@ -332,7 +361,12 @@ your collaborator would accept your pull/merge request in the web UI, thus mergi
 `git pull origin beta` to download the new commits added to `beta` as a result of
 the merge.
 
-Next let's look at a different branch that __can't be merged automatically
+### What if the merge doesn't work?
+
+In the previous example, git was able to perform the merge by itself, but sometimes it
+needs help from you.
+
+Let's look at a different branch that __can't be merged automatically
 __. We've created a __conflicting__ branch for you to experiment with. It's called
 `removeOverride`. The relationship with `beta` looks like this.
 
@@ -351,7 +385,7 @@ know how to combine the changes so it asks you for help.
 
 First let's download the `removeOverride` branch.
 
-1.  `git fetch origin removeOverride:removeOverride`
+1. `git checkout removeOverride` or if that doesn't work, try `git fetch origin removeOverride:removeOverride`
 2.  Look at the last commit of `removeOverride`: `git show removeOverride`
 
 Now let's try to merge into beta.
@@ -374,7 +408,8 @@ of merging branches.
 
 > If someone opened a pull/merge request of removeOverride against the beta branch
 in the web UI, the request would show an error icon and a message about merge conflicts,
-or not being able to automatically merge.
+or not being able to automatically merge. In that case, the author has to fix the problem locally
+and push again.
 
 ### Dealing with merge conflicts
 
@@ -384,7 +419,7 @@ First of all, if you don't want to merge at all, you can use the command `git me
 to exit the merge process to get back to the previous state.
 
 If you want to fix conflicts, you have to:
-* edit the conflicted file
+* edit the conflicted file(s)
 * add it to the staging area to mark the conflict as "resolved"
 * continue the merge
 
