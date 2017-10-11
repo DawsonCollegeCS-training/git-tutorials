@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Protected Branch Workflow](#protected-branch-workflow)
+    - [Terminology](#terminology)
+  - [Code Review](#code-review)
+    - [The purpose of code review](#the-purpose-of-code-review)
+      - [Review flags](#review-flags)
+    - [How to give good code review](#how-to-give-good-code-review)
+    - [How to receive good code review](#how-to-receive-good-code-review)
+  - [Recommended Team Workflow](#recommended-team-workflow)
+    - [Initial setup: Start a "staging" branch](#initial-setup-start-a-staging-branch)
+    - [Individual member starts work on a feature](#individual-member-starts-work-on-a-feature)
+    - [Get feedback from teammates](#get-feedback-from-teammates)
+    - [Incorporating Feedback](#incorporating-feedback)
+    - [If you are working alone](#if-you-are-working-alone)
+    - [When your feature is approved by the team](#when-your-feature-is-approved-by-the-team)
+    - [When you are ready to submit your finished work (for whole team/assignment)](#when-you-are-ready-to-submit-your-finished-work-for-whole-teamassignment)
+    - [When you want to incorporate feedback from teacher](#when-you-want-to-incorporate-feedback-from-teacher)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Protected Branch Workflow
 
 There are several popular git workflows used in industry. A git workflow is a set of
@@ -134,7 +157,7 @@ This is the branch on which you record your __ready-to-submit__ work. When
 your work is done, you will make a P/MR of the staging branch against the master branch.
 
 Let's say you're working on Assignment 5, then you can call your
-staging branch "Asst5".
+staging branch "".
 
 Make sure that you're on the master branch, that the master branch up-to-date,
 start the new branch:
@@ -142,8 +165,8 @@ start the new branch:
 ```
 git checkout master
 git pull origin master
-git checkout -b Asst5
-git push origin Asst5
+git checkout -b Staging-Asst5
+git push origin Staging-Asst5
 ```
 
 Other teammates will have to obtain the staging branch after they first
@@ -156,9 +179,9 @@ git clone url/to/project
 Then in the root of the cloned repo:
 
 ```
-git checkout Asst5
+git checkout Staging-Asst5
 # If the above command doesn't work, try using fetch instead
-git fetch origin Asst5:Asst5
+git fetch origin Staging-Asst5:Staging-Asst5
 ```
 
 ### Individual member starts work on a feature
@@ -171,9 +194,9 @@ maybe you only need one feature branch for all your work.
     new branch:
 
     ```
-    git checkout Asst5
+    git checkout Staging-Asst5
     # in case new code from teammates has been merged on your staging branch
-    git pull origin Asst5
+    git pull origin Staging-Asst5
     git checkout -b featureA
     ```
 
@@ -219,15 +242,15 @@ work can be merged into the staging branch.
 
 ```
 # in case teammates have landed new work on staging branch, bring it up to date
-git checkout Asst5
-git pull origin Asst5
+git checkout Staging-Asst5
+git pull origin Staging-Asst5
 git checkout featureA
-# replay your changes onto latest Asst5 and fix any conflicts
-git rebase Asst5
+# replay your changes onto latest Staging-Asst5 and fix any conflicts
+git rebase Staging-Asst5
 git push origin featureA
 ```
 
-Then use the gitblarg UI online to open a P/MR against the Asst5 branch and flag a teammate for
+Then use the gitblarg UI online to open a P/MR against the Staging-Asst5 branch and flag a teammate for
 review or discussion.
 
 ### Incorporating Feedback
@@ -271,21 +294,21 @@ staging branch yourself at the command-line whenever you are happy with your
 feature.
 
 ```
-git checkout Asst5
+git checkout Staging-Asst5
 git merge featureA
 ```
 
 ### When your feature is approved by the team
 
 1.  When your P/MR is approved (__r+__ from teammate), use the gitblarg web UI to __merge__ it
-    (click the Accept/Merge button): now featureA gets merged into the staging branch (Asst5).
+    (click the Accept/Merge button): now featureA gets merged into the staging branch (Staging-Asst5).
 
 2.  Pull the new commits from the remote. The commits you made for featureA are
-    now on the Asst5 branch.
+    now on the Staging-Asst5 branch.
 
     ```
-    git checkout Asst5
-    git pull origin Asst5
+    git checkout Staging-Asst5
+    git pull origin Staging-Asst5
     ```
 
 3.  _(Optional)_ Now you can also safely delete your featureA branch locally and on
@@ -300,20 +323,20 @@ git merge featureA
     once; you just need to keep the different branches up to date.)
 
     ```
-    git checkout Asst5
+    git checkout Staging-Asst5
     git checkout -b featureB
     ```
 
 ### When you are ready to submit your finished work (for whole team/assignment)
 
-You submit your work by making a P/MR of your staging branch (Asst5) against the master branch.  
+You submit your work by making a P/MR of your staging branch (Staging-Asst5) against the master branch.  
 __Only one teammate__ needs to do this:
 
 ```
 # pull in all the latest changes on the staging branch (to make sure you have
 # all your teammates' work)
-git checkout Asst5
-git pull origin Asst5
+git checkout Staging-Asst5
+git pull origin Staging-Asst5
 # check that the log makes sense, test the code,
 # check that the commits look good
 git log -p
@@ -322,7 +345,7 @@ git log -p
 # to put your changes in a feature branch.
 ```
 
-Next open the P/MR in gitblarg UI of Asst5 against __master__ and
+Next open the P/MR in gitblarg UI of Staging-Asst5 against __master__ and
 request review from your teacher.
 
 ### When you want to incorporate feedback from teacher
@@ -331,9 +354,9 @@ After grading, teacher might require you to make some changes before approving y
 P/MR" and merging into master.
 
 This is the same as working on a new feature. Start a feature branch based on the latest version of
-your staging branch, Asst5. Make your changes. Open a P/MR of the _feature branch
-against Asst5_. The team approves the P/MR and merges it to the Asst5 branch.
+your staging branch, Staging-Asst5. Make your changes. Open a P/MR of the _feature branch
+against Staging-Asst5_. The team approves the P/MR and merges it to the Staging-Asst5 branch.
 
-After merging, there are new commits on your Asst5 branch. These commits
+After merging, there are new commits on your Staging-Asst5 branch. These commits
 will appear automatically in the P/MR you originally made against master.
 Ask the teacher for re-review in that original "submission P/MR".
