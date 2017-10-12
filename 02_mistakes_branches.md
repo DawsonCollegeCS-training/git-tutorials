@@ -7,7 +7,7 @@ web UI (pull request/merge request)
 Commands shown: `git clone`, `git checkout`, `git branch`, `git reset`, `git show`, `git commit --amend`, `git fetch`, `git rm`, `git diff` of two branches.
 
 
-## Look at a repo web UI
+## Look at a repo via web UI
 
 1.  We will be using a repo  called
     `git-playground`. As a placeholder, we'll write the URL
@@ -45,52 +45,30 @@ o--o--o ... o--o--o--o--o
 The two branches share all the same commits, except one: `another_branch` has one extra
 commit that `master` doesn't have.
 
-### Why branches?
-
-`master` is the default branch in git, and it's usually treated as the "production" version of your code -- what you would actually release to users. We create additional, temporary branches in our repos to work on different features or just try something out. That way, `master` always stays in good shape.
-
-So your local history could look like this:
-
-```
-      welcome_animation
-     o
-    /
-o--o--o--o--o master
-       \
-        o--o--o admin_panel
-```
-
-We call these temporary branches __feature branches__: `welcome_animation` and
-`admin_panel` are feature branches. When many developers contribute to the same repo, they
-all work on one or more feature branches, then push their branches to the same remote repo
-on a server. Each branch is reviewed, and if it's approved, it can be "merged" into master.
-We'll learn more about merging in the next lab.
-
 ## Clone a repo
 
 In this exercise, we're simulating the scenario that
 you have been given access to a team repo as a collaborator.
 To start working on the repo, you need a local copy for yourself.
 
-1.  In your h drive: `git clone some/url/to/git-playground`
-    This will create a `git-playground` directory with the
+1. In git-bash:
+
+     ``` {.bash}
+     cd /h/
+git clone https://github.com/DawsonCollegeCS-training/git-playground
+```
+
+2.  This will create a `git-playground` directory with the
     repo contents.
-
-2. `cd git-playground`.
-
-    Depending on the configuration of your shell,
-    the command prompt __might__ show that your current branch is `master`;
-    it might look something like this:
-
+```{.bash}
+cd git-playground
+```
+    you will see something like
     ```
     username path/to/git-playground (master)  <-- the command prompt
     ```
-
-    If your prompt doesn't show the branch name, that's okay.
-
-> In our instructions from now on we will represent the prompt
-> as `(branchname)$` so you always know which branch you should be on.
-
+    > In our instructions from now on we will represent the prompt
+    > as `(branchname)$` so you always know which branch you should be on.
 
 3.  When you clone, git automatically sets a remote called
     `origin` for you. It's the label for the URL of the
@@ -98,61 +76,55 @@ To start working on the repo, you need a local copy for yourself.
 
     ```
     (master)$ git remote -v
-    origin some/url/git-playground.git (fetch)
-    origin some/url/git-playground.git (push)
+    origin	https://github.com/DawsonCollegeCS-training/git-playground (fetch)
+origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
     ```
 
-4.  Use `git log` to look at the list of commits on
-    master. Should be the same as what you saw on the web.
-    To exit the log, press `q`.
-
-5.  Use `git show` to see information about the most
+4.  Look at the list of commits on master (type `q` to quit)
+``` {.bash}
+ git log
+```
+5.  See information about the most
     recent commit on master. This shows a diff of the
     files as well. _Which file was changed? Was code
     added or removed?_
+    ``` {.bash}
+     git show
+    ```
 
 ## Access different branches
 
-6.  Use `git branch` to see all the branches you have
+6.  See all the branches you have
     locally.
 
     ```
     (master)$ git branch
     * master      <--- the asterisk means that's your current branch
     ```
-
-    It's only showing `master`! Where's `another_branch`?
-    You don't have it yet!
-
 > When you clone a repo, you don't receive all the remote branches by default, just master.
 
 7.  Let's "fetch" the missing branch:
+    ``` {.bash}
 
-    ```
     (master)$ git fetch origin another_branch:another_branch
-    From https://github.com/317-2017-02/git-playground
-    * [new branch]      another_branch -> another_branch
-    ```
 
-    This command means: download, from the remote called `origin`, the history of
-    the remote branch called `another_branch` and
-    put in a local branch also called `another_branch`.
+    From https://github.com/DawsonCollegeCS-training/git-playground
+ * [new branch]      another_branch -> another_branch
+
+    ```
 
     It created a new branch for you, `another_branch`, and this new branch has all the
     history from `origin/another_branch`.
 
 8.  Now we should have two local branches:
 
-    ```
+    ```{.bash}
     (master)$ git branch
     another_branch
     * master           <-- the asterisk means we're on master now
     ```
 
-Next we'll use the `checkout` command to switch to a different branch.
 
-> The `checkout` command makes the content of the repo working directory match
-the state of tracked files recorded at that commit.
 
 9.  First, check what files you have in the `src` dir of the repo.
 
@@ -160,7 +132,8 @@ the state of tracked files recorded at that commit.
     (master)$ ls src/
     geometry/ review/
     ```
-
+    > The `checkout` command makes the content of the repo working directory match
+    the state of tracked files recorded at that commit.
 10. Switch branches to `another_branch` and check the
     `src` dir again.
 
@@ -179,40 +152,25 @@ the state of tracked files recorded at that commit.
     The `review` directory is gone! That's because the history recorded on `another_branch`
     includes a commit that deletes `review`.
 
-> __When you use `git checkout`, the files you have on disk get modified
+    > __When you use `git checkout`, the files you have on disk are changed
 because you are moving to a different snapshot of history.__
 
-So after you checkout `another_branch`, the `review` directory and its
+  So after you checkout `another_branch`, the `review` directory and its
 files no longer exist on your computer's storage. But when you switch back
 to `master` the state of all the files will be reconstructed from history and
 they will reappear again.
 
-For example, let's say you were on `master` and had opened `src/review/Swaps.java`
-in an editor, then switched to `another_branch` in your bash shell.
-After changing branches, you can still see `Swaps.java` in the editor, but its
-content only exists in RAM, like an unsaved file. It is not stored on disk anymore
-because `another_branch` has a commit that deleted all of `review`.
-
-> You can only checkout __one branch at a time__ in your repo's working
+  > You can only checkout __one branch at a time__ in your repo's working
 directory. So even if you previously opened files from `master` in an editor,
 or you have a second bash window that was looking at `master`, if you
 switch to `another_branch`, that affects all running programs that might be
 looking at your files.
 
-It's normal to switch branches while you have files open; people do that all the
-time. Just be aware that only one version of your files exists on disk at any
-one time, depending on the branch, and make sure the correct branch is checked out
-before you save any changes.
-
-
+> __only one version of your files exists on disk at any time, that associated with the current branch__
 ## Make your own branches
 
 Remember that a branch is just a pointer to a commit.
-
-When you create a branch, you first have to choose a "base" for it: at
-which point in history do you want your branch to begin?
-
-The easiest way to choose a base is to checkout an existing branch as our starting point.
+The easiest way to choose a base (begin point) is to checkout an existing branch as our starting point.
 
 1.  Create a branch called "fix_comments" that points to the same commit
     as master:
