@@ -9,10 +9,9 @@
   - [Make your own branches](#make-your-own-branches)
     - [Additional info](#additional-info)
   - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
-      - [Creating the actual pull request/merge request: what to expect](#creating-the-actual-pull-requestmerge-request-what-to-expect)
-      - [Instructions for GitHub](#instructions-for-github)
-  - [Give feedback about a branch](#give-feedback-about-a-branch)
-  - [Dealing with some common mistakes](#dealing-with-some-common-mistakes)
+      - [Creating the actual pull request on the github website](#creating-the-actual-pull-request-on-the-github-website)
+      - [Give feedback about a branch](#give-feedback-about-a-branch)
+  - [Dealing with some common mistakes  (optional section)](#dealing-with-some-common-mistakes--optional-section)
     - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
     - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
     - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
@@ -75,16 +74,17 @@ you have been given access to a team repo as a collaborator.
 To start working on the repo, you need a local copy for yourself.
 
 1. In git-bash:
-   ``` {.bash}
-  cd /h/
-  git clone https://github.com/DawsonCollegeCS-training/git-playground
-  ```
+
+```{.bash}
+	cd /h/
+        git clone https://github.com/DawsonCollegeCS-training/git-playground
+```
 
 2.  This will create a `git-playground` directory with the
     repo contents.
 
     ```{.bash}
-    cd git-playground
+	    cd git-playground
     ```
     you will see something like
 
@@ -319,7 +319,7 @@ you to check that your request contains what you intended.
     you want to compare your changes to what's on master.
 *   Click "Create Pull Request"
 
-[github docs on pull requests](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
+[github docs on pull requests, for ref](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
 
 #### Give feedback about a branch
 
@@ -328,14 +328,14 @@ about specific lines of code or write general comments. These should always
 consist of constructive feedback to make the code better.
 
 Try it out by adding pretend comments to your partner's request:
-    * Add one general comment (by filling the general comment form on the request summary    
+    
+* Add one general comment (by filling the general comment form on the request summary    
       page)
-    * Add one line comment (by clicking on a line of text in the diff shown in the request)
-    * If you're not sure how to do this, see these docs:
-        * GitHub: <https://help.github.com/articles/commenting-on-a-pull-request/>
-        * GitLab: the UI is pretty similar to GitHub, see above.
+* Add one line comment (by clicking on a line of text in the diff shown in the request)
 
-12. You can also write comments on your own request -- for example, to add
+[github docs on commenting on pull requests, for ref](https://help.github.com/articles/commenting-on-a-pull-request/)
+
+You can also write comments on your own request -- for example, to add
 extra clarification, or to reply to a question.
 
 ## Dealing with some common mistakes  (optional section)
