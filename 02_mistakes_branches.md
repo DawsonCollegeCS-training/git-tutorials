@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Git Tutorial: Mistakes, Branches](#git-tutorial-mistakes-branches)
+  - [Look at a repo via web UI](#look-at-a-repo-via-web-ui)
+  - [Clone a repo](#clone-a-repo)
+  - [Access different branches](#access-different-branches)
+    - [Additional info](#additional-info)
+  - [Dealing with some common mistakes](#dealing-with-some-common-mistakes)
+    - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
+    - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
+    - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
+    - [Darn, I accidentally committed my changes on `master` instead of a feature branch :(](#darn-i-accidentally-committed-my-changes-on-master-instead-of-a-feature-branch-)
+    - [Additional info](#additional-info-1)
+  - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
+      - [Creating the actual pull request/merge request: what to expect](#creating-the-actual-pull-requestmerge-request-what-to-expect)
+        - [If you're on GitHub](#if-youre-on-github)
+      - [If you're on GitLab](#if-youre-on-gitlab)
+  - [Give feedback about a branch](#give-feedback-about-a-branch)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Git Tutorial: Mistakes, Branches
 
 Summary: clone an existing repository, switch between branches, create your
@@ -53,18 +76,20 @@ To start working on the repo, you need a local copy for yourself.
 
 1. In git-bash:
 
-     ``` {.bash}
-     cd /h/
-git clone https://github.com/DawsonCollegeCS-training/git-playground
-```
+  ``` {.bash}
+  cd /h/
+  git clone https://github.com/DawsonCollegeCS-training/git-playground
+  ```
 
 2.  This will create a `git-playground` directory with the
     repo contents.
-```{.bash}
-cd git-playground
-```
-    you will see something like
+
+    ```{.bash}
+    cd git-playground
     ```
+    you will see something like
+
+    ``` {.bash}
     username path/to/git-playground (master)  <-- the command prompt
     ```
     > In our instructions from now on we will represent the prompt
