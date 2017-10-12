@@ -49,7 +49,7 @@ commands. Then you'll also publish your repository to a remote server like githu
 In the second lab you will work with a partner to get a
 glimpse of how git is used for collaboration.
 
-### [Using git to collaborate](02_collaborate_stripped.md)
+### [Using git to collaborate](02_mistakes_branches)
 ## What we really learned
 
  <img src="https://imgs.xkcd.com/comics/git_2x.png" width=300 alt="xkcd on git"/>

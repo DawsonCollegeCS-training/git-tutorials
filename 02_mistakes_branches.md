@@ -271,45 +271,36 @@ __In this part, you will upload a branch and request review from a classmate. Wh
 
 ``` {.bash}
 $ git checkout master <-- if you're already on master this won't hurt
-(master)$ git branch lab2_yourname
-(master)$ git checkout lab2_yourname
+(master)$ git branch featurex_yourname
+(master)$ git checkout featurex_yourname
 ```
 
-2. Add a `Gender` called `NONE` to the `Gender` enum in `src/review/Person.java`.
+2. Open `src/review/Person.java` in an editor, add the line `// I changed this file`
 
-3. Fix the spelling error in `src/geometry/PointUtils.java`              
-   in the line `System.out.println("After srting");` -- should be "sorting"
+3. Open `src/geometry/PointUtils.java` in an editor, Fix the spelling error in the line `System.out.println("After srting");` -- should be "sorting"
 
-5. Add and commit the two files.
+4. Add and commit the two files.
 
-4. Choose any one java file and rename any local variable of your choice.
+5.  You can compare any two branches. Let's compare this branch to `master`:
 
-5. Add and commit the file you changed.
+    ```{.bash}
+	git diff master featurex_yourname`
+	```
 
-6.  You can compare any two branches. Let's compare this branch to `master`:
-
-    `git diff master lab2_yourname`
-
-    This shows a summary of all changes on `lab2_yourname` compared
+    This shows a summary of all changes on `featurex_yourname` compared
     to `master`
 
-__To do this next step, you have to be added to the `origin` repository
-as a member/collaborator by the owner of the repo.__ Otherwise, you will
-get a "permission denied" error when pushing.
-
-8.  Push your branch to origin:
+6.  Push your branch to origin (you can do this because we have given you permission):
 
      ```
-     git push origin lab2_yourname
+     git push origin featurex_yourname
      ```
 
-    This will create a new branch called `lab2_yourname` on the remote
-    repo labelled `origin` and upload your commits to it from the current branch. _We
-    are including your name in the branch name just to make it
-    unique, otherwise everyone doing this tutorial would push to the same
-    branch and overwrite each other's work._
+    This will create a new branch called `featurex_yourname` on the remote
+    repo labelled `origin` and upload your commits to it from the current branch. 
 
-9.  Now open the git-playground repo url in your browser again and sign into your account.
+10.  Now open the git-playground repo url https://github.com/DawsonCollegeCS-training/git-playground
+      in your browser again, you may have to sign into your account.
 
 #### Creating the actual pull request/merge request: what to expect
 
@@ -330,7 +321,7 @@ You can see:
 *   ...the diff of the changes being submitted.
 
 
-##### If you're on GitHub
+#### Instructions for GitHub
 
 Follow these rough instructions below. Details and screenshots on
 [github docs](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
@@ -341,23 +332,9 @@ Follow these rough instructions below. Details and screenshots on
     as well as a partner's username (pair up with a classmate).
     * "Could you review this please `@username`?"
 *   At the top of the form, make sure the two branches are base: `master`
-    and compare: `lab2_yourname` --    
+    and compare: `featurex_yourname` --    
     you want to compare your changes to what's on master.
 *   Click "Create Pull Request"
-
-#### If you're on GitLab
-
-Follow these rough instructions below. Details and screenshots on
-[gitlab docs](https://docs.gitlab.com/ee/gitlab-basics/add-merge-request.html)
-
-*   Click on "Merge Requests" at the top of the project menu, then "New Merge Request"
-*   Choose your branch as the source branch. The target branch should be master.
-*   That loads a form. In the Comment field, mention your teacher's username (`@username`) as
-    well as a partner's username (pair up with a classmate).
-    * "Could you review this please `@username`?"
-*   At the top of the form, make sure the two branches listed are `master` and
-    `lab2_yourname` -- you want to compare your changes to what's on master.
-*   Click "Submit Merge Request"
 
 ## Give feedback about a branch
 
@@ -365,7 +342,7 @@ In the request, people can look at your commits and write feedback
 about specific lines of code or write general comments. These should always
 consist of constructive feedback to make the code better.
 
-10. Try it out by adding pretend comments to your partner's request:
+11. Try it out by adding pretend comments to your partner's request:
     * Add one general comment (by filling the general comment form on the request summary    
       page)
     * Add one line comment (by clicking on a line of text in the diff shown in the request)
@@ -373,14 +350,9 @@ consist of constructive feedback to make the code better.
         * GitHub: <https://help.github.com/articles/commenting-on-a-pull-request/>
         * GitLab: the UI is pretty similar to GitHub, see above.
 
-11. You can also write comments on your own request -- for example, to add
+12. You can also write comments on your own request -- for example, to add
 extra clarification, or to reply to a question.
 
-_Please don't "Accept" or "Merge" or "Close" any merge requests in this exercise. Thanks!_
-
-> Pull Requests/Merge Requests are a concept that is specific to repo hosting services.
-The service provides a UI to help you communicate with your teammates and exchange
-feedback about different branches. git itself does not know anything about these requests.
 ## Dealing with some common mistakes
 
 Sometimes you enter the wrong command in git by accident. Mistakes
