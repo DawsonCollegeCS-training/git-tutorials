@@ -228,81 +228,52 @@ Success!
 ```
 ## 4 Set up a server side repo (a remote repo)
 
-These instructions focus on github, but the process is very similar with
-other hosts like gitlab or bitbucket.
-
 You will create an empty public repo on github and then "push" your
 local repo to that public location, effectively making a remote copy.
-
-> In this exercise, your remote repo will be _public_.   
-> for others you can decide if they will be _private_ or _public_
 
 ### Creating an empty repo on a server
 1.  If you don't have a github account create one
     <https://github.com/join?source=header-home>
-2.  Logon to the gitub site.
+2.  Logon to the github site.
 3.  To create a new repo click
-    on the plus sign:
+    on the plus sign
     _(Do NOT create a README nor any other files)_
-    ![](github-images/github-create-repo.png "fig:github-images/github-create-repo.png  ")
-4.  If the repo is created properly you will see this;
-    ![](github-images/github-create-repo2.png "fig:github-images/github-create-repo2.png")
-
+    
 Now you have an empty repo called planets on the github server.
-Effectively you just did the following on github, but through their web UI:
 
-``` {.bash}
-mkdir planets; cd planets; git init .
-```
+## 5 Add the name of a remote to your local repo
 
-## Add a remote (to your local repo)
-
-We need to connect our local repo to our remote repo. We must tell the local repo
-to talk to a remote repo on gitlab.com. This is called __adding a remote__.
-
-> It is better to use ssh but you will need to set up keys > for that. Witth https you
-> can use userid/password. So we'll use https for now.
-
-Note: server side == remote && client side == local
+We connect the local repo to the remote repo on github.com. This is called __adding a remote__.
 
 From the website copy the https url into your clipboard
-![](gitlab-images/gitlab-add-project4.PNG "fig:add-project4.PNG")
+![](github-images/github-add-project4.PNG "fig:add-project4.PNG")
 
 Go to your local repo directory (git-bash command line)
 
 Below shows my repo URL, use your own
 ``` {.bash}
 # go into repository directory (you already did a git init here)
-$ cd planets
+$ cd /h/planets
 
 # add a remote with name "origin" and the url from the website
-$ git remote add origin https://github.com/campbe13/lab1-using-git.git
+$ git remote add origin https://github.com/YOURID/planets.git
 
 # view it to verify
 $ git remote -v
-origin  https://github.com/campbe13/lab1-using-git.git (fetch)
-origin  https://github.com/campbe13/lab1-using-git.git (push)
+origin  https://github.com/YOURID/planets.git (fetch)
+origin  https://github.com/YOURID/planets.git (push)
 ```
 
-> "origin" is a standard name for the primary remote used by your
-> local repo. We could have used any string for this label.
+## 6 Upload the local repo to the remote repo
 
-## Push the local repo to the remote repo
-
-Now that the local (client) repo knows about the remote (server) repo, let's
-sync them. Your remote repo on gitlab is empty, so let's send your history
-from the local repo to the remote repo.
+Now that the local repo knows about the remote repo, let's
+sync them. 
 
 `git push` is the command for sending data to a remote.
-
-Note the files have been committed to the local repository.
 
 ``` {.bash}
 $ git push origin master
 ```
-
-So this command is saying: take all the commits in history up to the point
-labeled "master" and send them to the remote called "origin"
 
 We need to authenticate on the server:
 
@@ -313,44 +284,14 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 214 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/campbe13/planets.git
+To https://github.com/YOURID/planets.git
  * [new branch]      master -> master
 ```
 
-Reload the project page: you should see that your local history is now on the
+On the website, reload the project page: you should see that your local history is now on the
 server.
 
 ![](github-images/github-add-files.PNG "fig:github-images/github-add-files.PNG")
-
-## Review: (changes) then add, commit, push
-
-Add a README.md, for now just put in some basic text, you can get more
-sophisticated later, with (markdown)[https://help.github.com/articles/basic-writing-and-formatting-syntax/]
-
-Example below:
-
-``` {.bash}
-$ echo "# planets" > README.md
-$ echo "My first repo" >> README.md
-$ git add README.md
-$ git commit -m "add readme"     # into local repo
-[master ef2c0b8] add readme
- 1 file changed, 1 insertion(+)
-
- create mode 100644 README.md
-$ git push origin master         # into remote repo
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 284 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/campbe13/planets.git
-   340b5d6..ef2c0b8  master -> master
-```
-
-Reload the project page on the github website it will show you the README.md
-
-![](github-images/github-add-README.PNG "fig:github-images/github-add-README.PNG")
 
 ##  Using your repo from a new computer
 
