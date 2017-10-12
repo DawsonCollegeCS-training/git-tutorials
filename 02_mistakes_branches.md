@@ -2,26 +2,26 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Git Tutorial: Mistakes, Branches](#git-tutorial-mistakes-branches)
+- [Git Tutorial: Branches, Mistakes](#git-tutorial-branches-mistakes)
   - [Look at a repo via web UI](#look-at-a-repo-via-web-ui)
   - [Clone a repo](#clone-a-repo)
   - [Access different branches](#access-different-branches)
+  - [Make your own branches](#make-your-own-branches)
     - [Additional info](#additional-info)
-  - [Dealing with some common mistakes](#dealing-with-some-common-mistakes)
-    - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
-    - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
-    - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
-    - [Darn, I accidentally committed my changes on `master` instead of a feature branch :(](#darn-i-accidentally-committed-my-changes-on-master-instead-of-a-feature-branch-)
-    - [Additional info](#additional-info-1)
   - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
       - [Creating the actual pull request/merge request: what to expect](#creating-the-actual-pull-requestmerge-request-what-to-expect)
         - [If you're on GitHub](#if-youre-on-github)
       - [If you're on GitLab](#if-youre-on-gitlab)
   - [Give feedback about a branch](#give-feedback-about-a-branch)
+    - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
+    - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
+    - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
+    - [Darn, I accidentally committed my changes on `master` instead of a feature branch :(](#darn-i-accidentally-committed-my-changes-on-master-instead-of-a-feature-branch-)
+    - [Additional info](#additional-info-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Git Tutorial: Mistakes, Branches
+# Git Tutorial: Branches, Mistakes
 
 Summary: clone an existing repository, switch between branches, create your
 own branches, practice undoing some git commands, push your branch, request review in a
@@ -75,8 +75,7 @@ you have been given access to a team repo as a collaborator.
 To start working on the repo, you need a local copy for yourself.
 
 1. In git-bash:
-
-  ``` {.bash}
+   ``` {.bash}
   cd /h/
   git clone https://github.com/DawsonCollegeCS-training/git-playground
   ```
@@ -128,7 +127,7 @@ origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
     ```
 > When you clone a repo, you don't receive all the remote branches by default, just master.
 
-7.  Let's "fetch" the missing branch:
+7.  Let's "fetch" the missing branch from the remote:
     ``` {.bash}
 
     (master)$ git fetch origin another_branch:another_branch
@@ -177,21 +176,23 @@ origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
     The `review` directory is gone! That's because the history recorded on `another_branch`
     includes a commit that deletes `review`.
 
-    > __When you use `git checkout`, the files you have on disk are changed
-because you are moving to a different snapshot of history.__
+     > __only one version of your files exists on disk at any time, that associated with the current branch__
+    
+     > When you use `git checkout`, the files you have on disk are changed
+because you are moving to a different snapshot of history
 
-  So after you checkout `another_branch`, the `review` directory and its
+   > So after you checkout `another_branch`, the `review` directory and its
 files no longer exist on your computer's storage. But when you switch back
 to `master` the state of all the files will be reconstructed from history and
 they will reappear again.
 
-  > You can only checkout __one branch at a time__ in your repo's working
+   > You can only checkout __one branch at a time__ in your repo's working
 directory. So even if you previously opened files from `master` in an editor,
 or you have a second bash window that was looking at `master`, if you
 switch to `another_branch`, that affects all running programs that might be
 looking at your files.
 
-> __only one version of your files exists on disk at any time, that associated with the current branch__
+
 ## Make your own branches
 
 Remember that a branch is just a pointer to a commit.
@@ -200,18 +201,13 @@ The easiest way to choose a base (begin point) is to checkout an existing branch
 1.  Create a branch called "fix_comments" that points to the same commit
     as master:
 
-    ```
-    ## First switch to master
-    ## If you're already on master, this command won't hurt
-    $ git checkout master
-    ## Now create the branch
-    (master)$ git branch fix_comments
-    ## Check the log to see which commit fix_comments points to
-    (master)$ git log --decorate
+    ```{.bash}
+    (somebranch)$ git checkout master            <- make sure we're on master
+    (master)$ git branch fix_comments            <- create a mew branch
+    (master)$ git log 				 <- check our branch
     commit 83bc44725ae6ec90211cf0c3 (HEAD -> master, origin/master, origin/HEAD, fix_comments)
     ...
     ```
-
     The most-recent commit, which is at the top of the log, is referenced
     by both `master` and `fix_comments`: they both point to the same commit!
 
@@ -223,21 +219,19 @@ The easiest way to choose a base (begin point) is to checkout an existing branch
 
     ```
 
-2.  Next, switch to your new branch so that you can work on it.
+2.  Next, switch to your new branch so that you can work on it.  (Right now master & fix_comments files are the same)
 
     ```
     (master)$ git checkout fix_comments
+    (fix_comments)$  				<- prompt will change
+
     ```
 
-> No files will change as a result of this checkout because `fix_comments` and
-master point to the same commit. But, the next time you commit something, the commit will be appended to
-the `fix_comments` branch instead of `master`.
 
+3.  Let's make a change on our new branch.
 
-Let's make a change on our new branch.
-
-3.  Remove the line "//throw new ArrayOutOfBoundsException..."
-    from `src/review/ArrayExamples.java`
+    Using any editor open `src/review/ArrayExamples.java` delete the line "//throw new ArrayOutOfBoundsException..."
+    
 
 4.  Use the `git diff` command to check that only the line is removed.
 
@@ -261,6 +255,132 @@ o--o--o ... o--o--o--o--o master
 ### Additional info
 * [Guide to branches](https://www.atlassian.com/git/tutorials/using-branches).
 
+## Collaboration: Show your branch to team members
+
+After you've done some work, you probably want to publish it and request
+feedback from your team. We do that by pushing our branch
+to the remote repo and then using the server's web UI to open a "Pull Request" or
+
+"Pull Requests" are used to ask a project owner or
+teammate if they'd like to accept your changes by merging into the
+master branch. In other words, it's a request for code review, discussion or feedback.
+
+__In this part, you will upload a branch and request review from a classmate. When you're ready, pair up with a fellow student to review each other's changes.__
+
+1.  Let's create a new branch based on `master` and switch to it:
+
+``` {.bash}
+$ git checkout master <-- if you're already on master this won't hurt
+(master)$ git branch lab2_yourname
+(master)$ git checkout lab2_yourname
+```
+
+2. Add a `Gender` called `NONE` to the `Gender` enum in `src/review/Person.java`.
+
+3. Fix the spelling error in `src/geometry/PointUtils.java`              
+   in the line `System.out.println("After srting");` -- should be "sorting"
+
+5. Add and commit the two files.
+
+4. Choose any one java file and rename any local variable of your choice.
+
+5. Add and commit the file you changed.
+
+6.  You can compare any two branches. Let's compare this branch to `master`:
+
+    `git diff master lab2_yourname`
+
+    This shows a summary of all changes on `lab2_yourname` compared
+    to `master`
+
+__To do this next step, you have to be added to the `origin` repository
+as a member/collaborator by the owner of the repo.__ Otherwise, you will
+get a "permission denied" error when pushing.
+
+8.  Push your branch to origin:
+
+     ```
+     git push origin lab2_yourname
+     ```
+
+    This will create a new branch called `lab2_yourname` on the remote
+    repo labelled `origin` and upload your commits to it from the current branch. _We
+    are including your name in the branch name just to make it
+    unique, otherwise everyone doing this tutorial would push to the same
+    branch and overwrite each other's work._
+
+9.  Now open the git-playground repo url in your browser again and sign into your account.
+
+#### Creating the actual pull request/merge request: what to expect
+
+When you fill out the web form to create a request (see steps below), you will see
+information about the changes you are submitting. This is a chance for
+you to check that your request consists of what you intended.
+
+You can see:
+
+*   ...whether there
+    are any merge conflicts in the diff between your branch and master: a __merge
+    conflict__ happens when the master code has changed (since you wrote
+    your code) in a way that disagrees with your changes.
+*   ...the __commit messages__ included in your request. This is
+    another reason why commit message content and style is important: other
+    developers need to easily read these message to get a good understanding of
+    the changes.
+*   ...the diff of the changes being submitted.
+
+
+##### If you're on GitHub
+
+Follow these rough instructions below. Details and screenshots on
+[github docs](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
+
+*   Click on the "branches" link to see all the branches. Find your branch.
+*   Click "New Pull Request" next to your branch.
+*   That loads a form. In the Comment field, mention your teacher's username (`@username`)
+    as well as a partner's username (pair up with a classmate).
+    * "Could you review this please `@username`?"
+*   At the top of the form, make sure the two branches are base: `master`
+    and compare: `lab2_yourname` --    
+    you want to compare your changes to what's on master.
+*   Click "Create Pull Request"
+
+#### If you're on GitLab
+
+Follow these rough instructions below. Details and screenshots on
+[gitlab docs](https://docs.gitlab.com/ee/gitlab-basics/add-merge-request.html)
+
+*   Click on "Merge Requests" at the top of the project menu, then "New Merge Request"
+*   Choose your branch as the source branch. The target branch should be master.
+*   That loads a form. In the Comment field, mention your teacher's username (`@username`) as
+    well as a partner's username (pair up with a classmate).
+    * "Could you review this please `@username`?"
+*   At the top of the form, make sure the two branches listed are `master` and
+    `lab2_yourname` -- you want to compare your changes to what's on master.
+*   Click "Submit Merge Request"
+
+## Give feedback about a branch
+
+In the request, people can look at your commits and write feedback
+about specific lines of code or write general comments. These should always
+consist of constructive feedback to make the code better.
+
+10. Try it out by adding pretend comments to your partner's request:
+    * Add one general comment (by filling the general comment form on the request summary    
+      page)
+    * Add one line comment (by clicking on a line of text in the diff shown in the request)
+    * If you're not sure how to do this, see these docs:
+        * GitHub: <https://help.github.com/articles/commenting-on-a-pull-request/>
+        * GitLab: the UI is pretty similar to GitHub, see above.
+
+11. You can also write comments on your own request -- for example, to add
+extra clarification, or to reply to a question.
+
+_Please don't "Accept" or "Merge" or "Close" any merge requests in this exercise. Thanks!_
+
+> Pull Requests/Merge Requests are a concept that is specific to repo hosting services.
+The service provides a UI to help you communicate with your teammates and exchange
+feedback about different branches. git itself does not know anything about these requests.
 ## Dealing with some common mistakes
 
 Sometimes you enter the wrong command in git by accident. Mistakes
@@ -445,131 +565,4 @@ troubleshooting guide for all sorts of disastrous scenarios.
 
 
 
-## Collaboration: Show your branch to team members
 
-After you've done some work, you probably want to publish it and request
-feedback or code review from your team. We do that by pushing our branch
-to the remote repo and then using the server's web UI to open a "Pull Request" or
-"Merge Request" (the name varies depending on which repo hosting
-service you are using).
-
-"Pull Requests" or "Merge Requests" are used to ask a project owner or
-teammate if they'd like to accept your changes by merging into the
-master branch. In other words, it's a request for code review, discussion or feedback.
-
-__In this part, you will upload a branch and request review from a classmate. When you're ready, pair up with a fellow student to review each other's changes.__
-
-1.  Let's create a new branch based on `master` and switch to it:
-
-```
-$ git checkout master <-- if you're already on master this won't hurt
-(master)$ git branch lab2_yourname
-(master)$ git checkout lab2_yourname
-```
-
-2. Add a `Gender` called `NONE` to the `Gender` enum in `src/review/Person.java`.
-
-3. Fix the spelling error in `src/geometry/PointUtils.java`              
-   in the line `System.out.println("After srting");` -- should be "sorting"
-
-5. Add and commit the two files.
-
-4. Choose any one java file and rename any local variable of your choice.
-
-5. Add and commit the file you changed.
-
-6.  You can compare any two branches. Let's compare this branch to `master`:
-
-    `git diff master lab2_yourname`
-
-    This shows a summary of all changes on `lab2_yourname` compared
-    to `master`
-
-__To do this next step, you have to be added to the `origin` repository
-as a member/collaborator by the owner of the repo.__ Otherwise, you will
-get a "permission denied" error when pushing.
-
-8.  Push your branch to origin:
-
-     ```
-     git push origin lab2_yourname
-     ```
-
-    This will create a new branch called `lab2_yourname` on the remote
-    repo labelled `origin` and upload your commits to it from the current branch. _We
-    are including your name in the branch name just to make it
-    unique, otherwise everyone doing this tutorial would push to the same
-    branch and overwrite each other's work._
-
-9.  Now open the git-playground repo url in your browser again and sign into your account.
-
-#### Creating the actual pull request/merge request: what to expect
-
-When you fill out the web form to create a request (see steps below), you will see
-information about the changes you are submitting. This is a chance for
-you to check that your request consists of what you intended.
-
-You can see:
-
-*   ...whether there
-    are any merge conflicts in the diff between your branch and master: a __merge
-    conflict__ happens when the master code has changed (since you wrote
-    your code) in a way that disagrees with your changes.
-*   ...the __commit messages__ included in your request. This is
-    another reason why commit message content and style is important: other
-    developers need to easily read these message to get a good understanding of
-    the changes.
-*   ...the diff of the changes being submitted.
-
-
-##### If you're on GitHub
-
-Follow these rough instructions below. Details and screenshots on
-[github docs](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
-
-*   Click on the "branches" link to see all the branches. Find your branch.
-*   Click "New Pull Request" next to your branch.
-*   That loads a form. In the Comment field, mention your teacher's username (`@username`)
-    as well as a partner's username (pair up with a classmate).
-    * "Could you review this please `@username`?"
-*   At the top of the form, make sure the two branches are base: `master`
-    and compare: `lab2_yourname` --    
-    you want to compare your changes to what's on master.
-*   Click "Create Pull Request"
-
-#### If you're on GitLab
-
-Follow these rough instructions below. Details and screenshots on
-[gitlab docs](https://docs.gitlab.com/ee/gitlab-basics/add-merge-request.html)
-
-*   Click on "Merge Requests" at the top of the project menu, then "New Merge Request"
-*   Choose your branch as the source branch. The target branch should be master.
-*   That loads a form. In the Comment field, mention your teacher's username (`@username`) as
-    well as a partner's username (pair up with a classmate).
-    * "Could you review this please `@username`?"
-*   At the top of the form, make sure the two branches listed are `master` and
-    `lab2_yourname` -- you want to compare your changes to what's on master.
-*   Click "Submit Merge Request"
-
-## Give feedback about a branch
-
-In the request, people can look at your commits and write feedback
-about specific lines of code or write general comments. These should always
-consist of constructive feedback to make the code better.
-
-10. Try it out by adding pretend comments to your partner's request:
-    * Add one general comment (by filling the general comment form on the request summary    
-      page)
-    * Add one line comment (by clicking on a line of text in the diff shown in the request)
-    * If you're not sure how to do this, see these docs:
-        * GitHub: <https://help.github.com/articles/commenting-on-a-pull-request/>
-        * GitLab: the UI is pretty similar to GitHub, see above.
-
-11. You can also write comments on your own request -- for example, to add
-extra clarification, or to reply to a question.
-
-_Please don't "Accept" or "Merge" or "Close" any merge requests in this exercise. Thanks!_
-
-> Pull Requests/Merge Requests are a concept that is specific to repo hosting services.
-The service provides a UI to help you communicate with your teammates and exchange
-feedback about different branches. git itself does not know anything about these requests.
