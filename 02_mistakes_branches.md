@@ -75,10 +75,10 @@ To start working on the repo, you need a local copy for yourself.
 
 1. In git-bash:
 
-```{.bash}
+   ```{.bash}
 	cd /h/
         git clone https://github.com/DawsonCollegeCS-training/git-playground
-```
+   ```
 
 2.  This will create a `git-playground` directory with the
     repo contents.
@@ -105,13 +105,15 @@ To start working on the repo, you need a local copy for yourself.
     ```
 
 4.  Look at the list of commits on master (type `q` to quit)
+
    ``` {.bash}
     git log
    ```
 5.  See information about the most
     recent commit on master. This shows a diff of the
     files as well. _Which file was changed? Was code
-    added or removed?_
+    added or removed?
+
     ``` {.bash}
      git show
     ```
@@ -157,10 +159,9 @@ To start working on the repo, you need a local copy for yourself.
     (master)$ ls src/
     geometry/ review/
     ```
-    > The `checkout` command makes the content of the repo working directory match
-    the state of tracked files recorded at that commit.
 10. Switch branches to `another_branch` and check the
-    `src` dir again.
+    `src` dir again.  The `checkout` command makes the content of the repo working directory match
+    the state of tracked files recorded at that commit.
 
     ```
     (master)$ git checkout another_branch
