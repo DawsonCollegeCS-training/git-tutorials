@@ -29,7 +29,7 @@ push to and pull from the remote.
 Commands shown: `git init`, `git status`, `git add`, `git commit`, `git diff`,
 `git log`, `git clone`, `git remote`, `git push`, `git pull`
 
-## Create a local repo
+##  1 Create a local repo
 
 (Adapted from: <http://swcarpentry.github.io/git-novice/03-create/>)
 
@@ -68,20 +68,15 @@ nothing to commit (create/copy files and use "git add" to track)
 
 _Use `git status` often: it can give you hints about how to fix mistakes._
 
-## Add files to the repo
+## 2 Add files to the repo
 
 (Adapted from: <http://swcarpentry.github.io/git-novice/04-changes/>)
 
 Create a file in the planets directory
 
->instead of notepad here, use vi if you are familiar with it
-  1. i > insert
-  2. type in your text
-  3. esc + :wq   >write and save
-
 ``` {.bash}
-$ notepad pluto.txt   #  put some text in here "alas it is no more"  
-                      #  with notepad save as h:\planets\pluto.txt & close it
+$ atom .              #  create a new file pluto.txt put some text in here "alas it is no more"  
+                      #  save & close it
 $ git status
 
 On branch master
@@ -94,9 +89,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-git does not pay attention to changes in a file until you `add` it to the repo. This
-tells git to "stage" your file in the __staging area__: this represents the changes
-that will be recorded in your repo history if you decide to commit them.
+git does not pay attention to changes in a file until you `add` it to the repo. 
 
 ``` {.bash}
 $ git add pluto.txt
@@ -111,19 +104,7 @@ Changes to be committed:
    new file:   pluto.txt
 
 ```
-
-### Possible status of files in a git repo
-`untracked`:
-Files that aren't tracked by Git yet. This usually indicates a newly created file.
-
-`staged` (in the staging area):
-The result of `git add`; tracked files that are ready to be committed.
-
-`unstaged` (not in the staging area):
-Tracked files with changes that have not been "git-added".
-
-
-You can see the staged changes as follows:
+You can see what is about to be committed
 
 ```{.bash}
 $ git diff --staged
@@ -138,17 +119,12 @@ index 0000000..d91f233
 \ No newline at end of file
 ```
 
-## Create commits
+## 3 Create commits
 
-Tell git save a snapshot of file history by recording the changes that you
-added to the staging area.
+Tell git to save a snapshot of file history. 
 
 ``` {.bash}
 $ git commit -m "Create first planet file."
-```
-The result of the commit should be:
-
-``` {.bash}
 [master (root-commit) f22b25e] Create first planet file.
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
@@ -162,7 +138,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-Show all commits in reverse chronological order:
+Show all commits in reverse chronological order 
 
 ``` {.bash}
 $ git log
@@ -181,22 +157,13 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ``` {.bash}
 $ git commit -m "Create first planet file.
 ```
-The -m provides a one line commit message. It is a widely adopted practice to start commit messages with an imperative verb, this makes the history easier to read when use `git log` and other tools.
+### More commits!
 
-The message "Create first planet file" describes the changes made by that
-commit.
-
-## More commits!
-
-You just committed a new file. What does it look like when you commit
-changes to an already-tracked file?
+Make and  commit changes to an already-tracked file
 
 ``` {.bash}
-$ notepad pluto.txt   #  add a new line of text "we miss you pluto"  & save it
+$ atom pluto.txt   #  add a new line of text "we miss you pluto"  & save it
 $ git status
-```
-
-``` {.bash}
 # On branch master
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -212,11 +179,6 @@ what is in the first commit
 
 ``` {.bash}
 git diff
-```
-
-Output of git diff:
-
-``` {.bash}
 diff --git a/pluto.txt b/pluto.txt
 index 9f83956..0ce4e22 100644
 --- a/pluto.txt
@@ -235,13 +197,12 @@ Changes not staged for commit:
     modified:   pluto.txt
 
 no changes added to commit
-
-$ git status
 ```
 
 NOPE!
 
 ``` {.bash}
+$ git status
 # On branch master
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -252,7 +213,7 @@ NOPE!
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-We need to add it to the index (staging area) before committing: __always add then commit__
+__always add then commit__
 
 ``` {.bash}
 $ git add pluto.txt
@@ -265,14 +226,7 @@ Success!
 [master 340b5d6] add sentiment
  1 file changed, 1 insertion(+)
 ```
-
-So getting files into a repo is a two-part process:
-
-untracked changes --(git add)-&gt; staging area --(git commit)--&gt; repository
-
-![](Git-staging-area.jpg "fig:Git-staging-area.jpg")
-
-## Set up a server side repo (a remote repo)
+## 4 Set up a server side repo (a remote repo)
 
 These instructions focus on github, but the process is very similar with
 other hosts like gitlab or bitbucket.
