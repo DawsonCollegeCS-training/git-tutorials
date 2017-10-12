@@ -101,13 +101,13 @@ To start working on the repo, you need a local copy for yourself.
     ```
     (master)$ git remote -v
     origin	https://github.com/DawsonCollegeCS-training/git-playground (fetch)
-origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
+    origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
     ```
 
 4.  Look at the list of commits on master (type `q` to quit)
-``` {.bash}
- git log
-```
+   ``` {.bash}
+    git log
+   ```
 5.  See information about the most
     recent commit on master. This shows a diff of the
     files as well. _Which file was changed? Was code
@@ -116,7 +116,7 @@ origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
      git show
     ```
 
-## Access different branches
+### Access different branches
 
 6.  See all the branches you have
     locally.
@@ -125,15 +125,16 @@ origin	https://github.com/DawsonCollegeCS-training/git-playground (push)
     (master)$ git branch
     * master      <--- the asterisk means that's your current branch
     ```
-> When you clone a repo, you don't receive all the remote branches by default, just master.
+   > When you clone a repo, you don't receive all the remote branches by default, just master.
 
 7.  Let's "fetch" the missing branch from the remote:
+    
     ``` {.bash}
 
     (master)$ git fetch origin another_branch:another_branch
 
     From https://github.com/DawsonCollegeCS-training/git-playground
- * [new branch]      another_branch -> another_branch
+    [new branch]      another_branch -> another_branch
 
     ```
 
@@ -193,7 +194,7 @@ switch to `another_branch`, that affects all running programs that might be
 looking at your files.
 
 
-## Make your own branches
+### Make your own branches
 
 Remember that a branch is just a pointer to a commit.
 The easiest way to choose a base (begin point) is to checkout an existing branch as our starting point.
