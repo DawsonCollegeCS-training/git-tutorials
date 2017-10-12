@@ -3,19 +3,18 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Git Tutorial, Part 1](#git-tutorial-part-1)
-  - [Create a local repo](#create-a-local-repo)
-  - [Add files to the repo](#add-files-to-the-repo)
-    - [Possible status of files in a git repo](#possible-status-of-files-in-a-git-repo)
-  - [Create commits](#create-commits)
+  - [0 Configure git](#0-configure-git)
+  - [1 Create a local repo](#1-create-a-local-repo)
+  - [2 Add files to the repo](#2-add-files-to-the-repo)
+  - [3 Create commits](#3-create-commits)
     - [Commit messages](#commit-messages)
-  - [More commits!](#more-commits)
-  - [Set up a server side repo (a remote repo)](#set-up-a-server-side-repo-a-remote-repo)
+    - [More commits!](#more-commits)
+  - [4 Set up a server side repo (a remote repo)](#4-set-up-a-server-side-repo-a-remote-repo)
     - [Creating an empty repo on a server](#creating-an-empty-repo-on-a-server)
-  - [Add a remote (to your local repo)](#add-a-remote-to-your-local-repo)
-  - [Push the local repo to the remote repo](#push-the-local-repo-to-the-remote-repo)
-  - [Review: (changes) then add, commit, push](#review-changes-then-add-commit-push)
-  - [Using your repo from a new computer](#using-your-repo-from-a-new-computer)
-    - [clone](#clone)
+  - [5 Add the name of a remote to your local repo](#5-add-the-name-of-a-remote-to-your-local-repo)
+  - [6 Upload the local repo to the remote repo](#6-upload-the-local-repo-to-the-remote-repo)
+  - [7 Using your repo from a new computer](#7-using-your-repo-from-a-new-computer)
+    - [Clone](#clone)
     - [Collaborate... with your future self.](#collaborate-with-your-future-self)
     - [Using your repo back on the first computer (in the lab)](#using-your-repo-back-on-the-first-computer-in-the-lab)
 
@@ -29,6 +28,30 @@ push to and pull from the remote.
 Commands shown: `git init`, `git status`, `git add`, `git commit`, `git diff`,
 `git log`, `git clone`, `git remote`, `git push`, `git pull`
 
+## 0 Configure git
+
+Open a git-bash command line window & configure your client. (In the labs
+this will configure the git client info in the H: drive.)
+
+``` {.bash}
+$ git config --global user.name "your name"
+$ git config --global user.email "you@dawsoncollege.qc.ca"
+$ git config --global color.ui "auto"
+```
+
+These settings will be written into `~/.gitconfig` and apply to all the
+repos that you create. To check the settings.
+
+``` {.bash}
+$ git config --list
+```
+
+> To get help with any command, add ``-h` or `--help` to it.
+
+``` {.bash}
+$ git config -h
+$ git config --help
+```
 ##  1 Create a local repo
 
 (Adapted from: <http://swcarpentry.github.io/git-novice/03-create/>)
@@ -89,7 +112,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-git does not pay attention to changes in a file until you `add` it to the repo. 
+git does not pay attention to changes in a file until you `add` it to the repo.
 
 ``` {.bash}
 $ git add pluto.txt
@@ -121,7 +144,7 @@ index 0000000..d91f233
 
 ## 3 Create commits
 
-Tell git to save a snapshot of file history. 
+Tell git to save a snapshot of file history.
 
 ``` {.bash}
 $ git commit -m "Create first planet file."
@@ -138,7 +161,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-Show all commits in reverse chronological order 
+Show all commits in reverse chronological order
 
 ``` {.bash}
 $ git log
@@ -238,7 +261,7 @@ local repo to that public location, effectively making a remote copy.
 3.  To create a new repo click
     on the plus sign
     _(Do NOT create a README nor any other files)_
-    
+
 Now you have an empty repo called planets on the github server.
 
 ## 5 Add the name of a remote to your local repo
@@ -267,7 +290,7 @@ origin  https://github.com/YOURID/planets.git (push)
 ## 6 Upload the local repo to the remote repo
 
 Now that the local repo knows about the remote repo, let's
-sync them. 
+sync them.
 
 `git push` is the command for sending data to a remote.
 
@@ -299,7 +322,7 @@ server.
 Let's say you want to work on the `planets.git` repo on another computer.
 To do that, you first have to __clone__ the repository from the remote server.
 
-### clone
+### Clone
 
 __You would normally do this part from a different computer outside of the
 lab, but we can simulate it by using a different directory on the same computer.__
@@ -335,8 +358,8 @@ By default, cloning will
 set up a remote called "origin" for you that points to the remote URL you cloned from.
 ``` {.bash}
 $ git remote -v
-origin  https://github.com/campbe13/planets.git (fetch)
-origin  https://github.com/campbe13/planets.git (push)
+origin  https://github.com/YOURID/planets.git (fetch)
+origin  https://github.com/YOURID/planets.git (push)
 ```
 ### Collaborate... with your future self.
 

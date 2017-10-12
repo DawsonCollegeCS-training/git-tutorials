@@ -3,20 +3,13 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Git Tutorial: Branches, Mistakes](#git-tutorial-branches-mistakes)
-  - [Look at a repo via web UI](#look-at-a-repo-via-web-ui)
-  - [Clone a repo](#clone-a-repo)
+  - [1 Look at a repo via web UI](#1-look-at-a-repo-via-web-ui)
+  - [2 Clone a repo](#2-clone-a-repo)
     - [Access different branches](#access-different-branches)
     - [Make your own branches](#make-your-own-branches)
-    - [Additional info](#additional-info)
-  - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
+  - [3. Collaboration: Show your branch to team members](#3-collaboration-show-your-branch-to-team-members)
       - [Creating the actual pull request on the github website](#creating-the-actual-pull-request-on-the-github-website)
-      - [Give feedback about a branch](#give-feedback-about-a-branch)
-  - [Dealing with some common mistakes  (optional section)](#dealing-with-some-common-mistakes--optional-section)
-    - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
-    - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
-    - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
-    - [Darn, I accidentally committed my changes on `master` instead of a feature branch :(](#darn-i-accidentally-committed-my-changes-on-master-instead-of-a-feature-branch-)
-    - [Additional info](#additional-info-1)
+  - [4 Demo PRs and feedback](#4-demo-prs-and-feedback)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
