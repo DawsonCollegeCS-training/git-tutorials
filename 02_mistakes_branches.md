@@ -10,9 +10,9 @@
     - [Additional info](#additional-info)
   - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
       - [Creating the actual pull request/merge request: what to expect](#creating-the-actual-pull-requestmerge-request-what-to-expect)
-        - [If you're on GitHub](#if-youre-on-github)
-      - [If you're on GitLab](#if-youre-on-gitlab)
+      - [Instructions for GitHub](#instructions-for-github)
   - [Give feedback about a branch](#give-feedback-about-a-branch)
+  - [Dealing with some common mistakes](#dealing-with-some-common-mistakes)
     - [Oops, I added the wrong thing to the staging area](#oops-i-added-the-wrong-thing-to-the-staging-area)
     - [Argh, all of these changes are bad, can I undo everything?](#argh-all-of-these-changes-are-bad-can-i-undo-everything)
     - [Oh noooo I committed the wrong thing! My commit message is terrible!](#oh-noooo-i-committed-the-wrong-thing-my-commit-message-is-terrible)
@@ -302,47 +302,32 @@ $ git checkout master <-- if you're already on master this won't hurt
 10.  Now open the git-playground repo url https://github.com/DawsonCollegeCS-training/git-playground
       in your browser again, you may have to sign into your account.
 
-#### Creating the actual pull request/merge request: what to expect
+#### Creating the actual pull request on the github website  
+
+Choose a partner to work together on this (you each submit a pull request, and have the other review it for feedback).
 
 When you fill out the web form to create a request (see steps below), you will see
 information about the changes you are submitting. This is a chance for
-you to check that your request consists of what you intended.
-
-You can see:
-
-*   ...whether there
-    are any merge conflicts in the diff between your branch and master: a __merge
-    conflict__ happens when the master code has changed (since you wrote
-    your code) in a way that disagrees with your changes.
-*   ...the __commit messages__ included in your request. This is
-    another reason why commit message content and style is important: other
-    developers need to easily read these message to get a good understanding of
-    the changes.
-*   ...the diff of the changes being submitted.
-
-
-#### Instructions for GitHub
-
-Follow these rough instructions below. Details and screenshots on
-[github docs](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
+you to check that your request contains what you intended.
 
 *   Click on the "branches" link to see all the branches. Find your branch.
-*   Click "New Pull Request" next to your branch.
-*   That loads a form. In the Comment field, mention your teacher's username (`@username`)
-    as well as a partner's username (pair up with a classmate).
+*   Click "New Pull Request" next to your branch. This loads a form.
+*   In the Comment field, mention your partner's username (`@username`)
     * "Could you review this please `@username`?"
 *   At the top of the form, make sure the two branches are base: `master`
     and compare: `featurex_yourname` --    
     you want to compare your changes to what's on master.
 *   Click "Create Pull Request"
 
-## Give feedback about a branch
+[github docs on pull requests](https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request)
 
-In the request, people can look at your commits and write feedback
+#### Give feedback about a branch
+
+In the pull request you created, people can look at your commits and write feedback
 about specific lines of code or write general comments. These should always
 consist of constructive feedback to make the code better.
 
-11. Try it out by adding pretend comments to your partner's request:
+Try it out by adding pretend comments to your partner's request:
     * Add one general comment (by filling the general comment form on the request summary    
       page)
     * Add one line comment (by clicking on a line of text in the diff shown in the request)
@@ -353,8 +338,7 @@ consist of constructive feedback to make the code better.
 12. You can also write comments on your own request -- for example, to add
 extra clarification, or to reply to a question.
 
-## Dealing with some common mistakes
-
+## Dealing with some common mistakes  (optional section)
 Sometimes you enter the wrong command in git by accident. Mistakes
 happen to everyone all the time. Let's practice fixing them.
 
