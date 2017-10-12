@@ -293,10 +293,8 @@ server.
 
 ![](github-images/github-add-files.PNG "fig:github-images/github-add-files.PNG")
 
-##  Using your repo from a new computer
+## 7 Using your repo from a new computer
 
-Up to now you have a planets.git repo in your h: drive (local), a
-planets.git repo on gitlab.com (remote) and they are identical.
 
 Let's say you want to work on the `planets.git` repo on another computer.
 To do that, you first have to __clone__ the repository from the remote server.
@@ -340,29 +338,20 @@ $ git remote -v
 origin  https://github.com/campbe13/planets.git (fetch)
 origin  https://github.com/campbe13/planets.git (push)
 ```
-
-So now you have 3 identical copies of this repository:
-1. on your h: drive
-2. on github
-3. on your home computer (or wherever you cloned just now, like the _imaginaryOtherComputer_ directory).
-
 ### Collaborate... with your future self.
 
-In this workflow scenario, every time you commit changes locally, you will push them to
-the remote so you can access your latest changes wherever you are working next
-time.
+Modify some files in the repo you just cloned, and create new ones.
 
-Modify some files in the repo you just cloned, and/or create new ones.
 I added `home-planet.txt` and changed `README.md`
 
 ``` {.bash}
-$ vi home-planet.txt
+$ atom home-planet.txt
 $ ls -l
 total 12
 -rw-rw-r-- 1 tricia tricia 32 Aug 28 19:54 home-planet.txt
 -rw-rw-r-- 1 tricia tricia 38 Aug 28 19:51 pluto.txt
 -rw-rw-r-- 1 tricia tricia 14 Aug 28 19:51 README.md
-$ vi README.md
+$ atom README.md
 $ git diff
 diff --git a/README.md b/README.md
 index b85b88f..cc8bdcd 100644
@@ -373,7 +362,7 @@ index b85b88f..cc8bdcd 100644
  My first repo
 +fixed the thingy error
 ```
-I changed the local files, the other repos are not changed.  I must explicitly update the remote:
+Add and commit the new changes to the local repository
 
 ``` {.bash}
 $ git add .
@@ -385,18 +374,14 @@ Changes to be committed:
 
     modified:   README.md
     new file:   home-planet.txt
-```
 
-`add` will update the staging area, `commit` will save to the local repo
-
-``` {.bash}
 $ git commit -m "done for today will work from school tomorrow"
 [master c3993b1] done for today will work from school tomorrow
  2 files changed, 3 insertions(+)
  create mode 100644 home-planet.txt
 ```
 
-I need to push these changes to the remote repo.
+push these changes to the remote repo.
 
 ``` {.bash}
 $ git push origin master
@@ -406,11 +391,10 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (4/4), 432 bytes | 0 bytes/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
-To https://github.com/campbe13/planets.git
+To https://github.com/YOURID/planets.git
    ef2c0b8..c3993b1  master -> master
 ```
-
-Now the remote (server) github repo contains my latest changes.
+Now the remote github repo contains my latest changes.
 
 ### Using your repo back on the first computer (in the lab)
 
@@ -418,20 +402,15 @@ __You would normally do this part from a different computer, but we can simulate
 where you originally created the planets repo on your h: drive at the beginning of this
 tutorial.
 
-So you committed a change in the repo at home, pushed to your remote, and now
-you want to work on the repo in the school lab again. Your home and remote
-repo are up-to-date, but your lab repo is not. How do you get the
-changes you made at home? Follow the example below.
-
 Before you make any new changes in your local lab repo, make sure you sync it
-with any changes from the remote (gitlab) with `git pull`.
+with any changes from the remote (github) with `git pull`.
 
 ``` {.bash}
 $ cd /h/planets
 $ ls
 pluto.txt  README.md
 $ git pull origin master
-From https://gitlab.com/campbe13/planets
+From https://github.com/YOURID/planets
  * branch            master     -> FETCH_HEAD
 Updating ef2c0b8..c3993b1
 Fast-forward
@@ -440,8 +419,7 @@ Fast-forward
  2 files changed, 3 insertions(+)
  create mode 100644 home-planet.txt
 ```
-
-Now your local repo matches the remote (gitlab) and you can add new
+Now your local repo matches the remote and you can add new
 changes and to the remote again as needed.
 
 ``` {.bash}
@@ -472,8 +450,7 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-So I need to add the new file (stage), then commit them (save history in local
-repo)
+add and commit my new changes
 
 ``` {.bash}
 $ git add .
@@ -500,7 +477,6 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (4/4), 440 bytes | 0 bytes/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
-To https://github.com/campbe13/planets.git
+To https://github.com/YOURID/planets.git
    c3993b1..f843520  master -> master
 ```
-doc
