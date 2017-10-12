@@ -5,8 +5,8 @@
 - [Git Tutorial: Branches, Mistakes](#git-tutorial-branches-mistakes)
   - [Look at a repo via web UI](#look-at-a-repo-via-web-ui)
   - [Clone a repo](#clone-a-repo)
-  - [Access different branches](#access-different-branches)
-  - [Make your own branches](#make-your-own-branches)
+    - [Access different branches](#access-different-branches)
+    - [Make your own branches](#make-your-own-branches)
     - [Additional info](#additional-info)
   - [Collaboration: Show your branch to team members](#collaboration-show-your-branch-to-team-members)
       - [Creating the actual pull request on the github website](#creating-the-actual-pull-request-on-the-github-website)
@@ -106,9 +106,9 @@ To start working on the repo, you need a local copy for yourself.
 
 4.  Look at the list of commits on master (type `q` to quit)
 
-   ``` {.bash}
+    ``` {.bash}
     git log
-   ```
+    ``` 
 5.  See information about the most
     recent commit on master. This shows a diff of the
     files as well. _Which file was changed? Was code
@@ -127,7 +127,7 @@ To start working on the repo, you need a local copy for yourself.
     (master)$ git branch
     * master      <--- the asterisk means that's your current branch
     ```
-   > When you clone a repo, you don't receive all the remote branches by default, just master.
+    > When you clone a repo, you don't receive all the remote branches by default, just master.
 
 7.  Let's "fetch" the missing branch from the remote:
     
@@ -183,17 +183,6 @@ To start working on the repo, you need a local copy for yourself.
      > When you use `git checkout`, the files you have on disk are changed
 because you are moving to a different snapshot of history
 
-   > So after you checkout `another_branch`, the `review` directory and its
-files no longer exist on your computer's storage. But when you switch back
-to `master` the state of all the files will be reconstructed from history and
-they will reappear again.
-
-   > You can only checkout __one branch at a time__ in your repo's working
-directory. So even if you previously opened files from `master` in an editor,
-or you have a second bash window that was looking at `master`, if you
-switch to `another_branch`, that affects all running programs that might be
-looking at your files.
-
 
 ### Make your own branches
 
@@ -230,9 +219,7 @@ The easiest way to choose a base (begin point) is to checkout an existing branch
     ```
 
 
-3.  Let's make a change on our new branch.
-
-    Using any editor open `src/review/ArrayExamples.java` delete the line "//throw new ArrayOutOfBoundsException..."
+3.  Let's make a change on our new branch. Using any editor open `src/review/ArrayExamples.java` delete the line `//throw new ArrayOutOfBoundsException...`
     
 
 4.  Use the `git diff` command to check that only the line is removed.
@@ -245,14 +232,13 @@ The easiest way to choose a base (begin point) is to checkout an existing branch
      commits in the log. Our history now looks like this:
 
 
-```
-                          o fix_comments
-                         /
-o--o--o ... o--o--o--o--o master
-                         \
-                          o another_branch
-
-```
+     ```
+                               o fix_comments
+                              /
+     o--o--o ... o--o--o--o--o master
+                              \
+                               o another_branch
+     ```
 
 ### Additional info
 * [Guide to branches](https://www.atlassian.com/git/tutorials/using-branches).
@@ -269,13 +255,13 @@ master branch. In other words, it's a request for code review, discussion or fee
 
 __In this part, you will upload a branch and request review from a classmate. When you're ready, pair up with a fellow student to review each other's changes.__
 
-1.  Let's create a new branch based on `master` and switch to it:
+1. Let's create a new branch based on `master` and switch to it:
 
-``` {.bash}
-$ git checkout master <-- if you're already on master this won't hurt
-(master)$ git branch featurex_yourname
-(master)$ git checkout featurex_yourname
-```
+   ``` {.bash}
+   $ git checkout master <-- if you're already on master this won't hurt
+   (master)$ git branch featurex_yourname
+   (master)$ git checkout featurex_yourname
+   ```
 
 2. Open `src/review/Person.java` in an editor, add the line `// I changed this file`
 
@@ -335,10 +321,11 @@ Try it out by adding pretend comments to your partner's request:
       page)
 * Add one line comment (by clicking on a line of text in the diff shown in the request)
 
-[github docs on commenting on pull requests, for ref](https://help.github.com/articles/commenting-on-a-pull-request/)
-
 You can also write comments on your own request -- for example, to add
 extra clarification, or to reply to a question.
+
+[github docs on commenting on pull requests, for ref](https://help.github.com/articles/commenting-on-a-pull-request/)
+
 
 ## Dealing with some common mistakes  (optional section)
 Sometimes you enter the wrong command in git by accident. Mistakes
