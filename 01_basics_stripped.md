@@ -18,7 +18,6 @@
     - [clone](#clone)
     - [Collaborate... with your future self.](#collaborate-with-your-future-self)
     - [Using your repo back on the first computer (in the lab)](#using-your-repo-back-on-the-first-computer-in-the-lab)
-    - [Ahhh! What happens if I forget to pull from `origin` before I commit new changes locally!!](#ahhh-what-happens-if-i-forget-to-pull-from-origin-before-i-commit-new-changes-locally)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -609,13 +608,4 @@ Total 4 (delta 0), reused 0 (delta 0)
 To https://github.com/campbe13/planets.git
    c3993b1..f843520  master -> master
 ```
-
-### Ahhh! What happens if I forget to pull from `origin` before I commit new changes locally!!
-
-Don't worry, you can fix pretty much any mistake you make in git, although it might
-be a bit tricky sometimes.
-
-If you pull after you've already made commits locally, you will either "merge"
-or "rebase" the commits. You may also have to fix some "conflicts". You can
-even "rewrite history". These are
-all things that we'll practice later on, so for now just ask me for help. :)
+doc

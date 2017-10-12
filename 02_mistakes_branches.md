@@ -9,11 +9,11 @@ Commands shown: `git clone`, `git checkout`, `git branch`, `git reset`, `git sho
 
 ## Look at a repo web UI
 
-1.  Ask your instructor for the URL of a repo called
+1.  We will be using a repo  called
     `git-playground`. As a placeholder, we'll write the URL
-    as `some/url/to/git-playground`.
-
-2.  Open the URL in your favourite browser: it shows an
+    as `some/url/to/git-playground`.  
+2.  The actual URL you will use is https://github.com/DawsonCollegeCS-training/git-playground
+click on it to open : it shows an
     overview of the repo and its files.
 
 3.  Click on the link to "commits" (likely on the top left)

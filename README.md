@@ -7,7 +7,7 @@
   - [What is a git repository?](#what-is-a-git-repository)
   - [What is git?](#what-is-git)
   - [How do I use git?](#how-do-i-use-git)
-  - [Let's get started!](#lets-get-started)
+  - [Let's get started!](#tutorial-exercises-lets-get-started)
     - [Using git solo](#using-git-solo)
     - [Using git to collaborate](#using-git-to-collaborate)
   - [What we really learned](#what-we-really-learned)
@@ -18,10 +18,9 @@
 
 # Intro to git  PED Day 2017
 
-
 ## What is this?
 
-These are hands on git tutorials, using git installed locally, and (github.com)[http://github.com] a remote
+These are hands on git tutorials, using git installed locally, and [github.com](http://github.com) a remote
 repository server.
 
 ## What is a git repository?
@@ -40,7 +39,7 @@ _plain-text_ files like software source code.
 
 These tutorials use git commands to create and update a local and a remote repository.
 
-## Let's get started!
+## Tutorial Exercises, Let's get started!
 
 In the first lab, you'll create a repository on your computer and use it to learn some git
 commands. Then you'll also publish your repository to a remote server like github.com.
@@ -53,7 +52,7 @@ glimpse of how git is used for collaboration.
 ### [Using git to collaborate](02_collaborate_stripped.md)
 ## What we really learned
 
- <img src="https://imgs.xkcd.com/comics/git_2x.png" width=200 alt="xkcd on git"/>
+ <img src="https://imgs.xkcd.com/comics/git_2x.png" width=300 alt="xkcd on git"/>
 
 ## Other repository servers
 [differences between github/gitlab/bitbucket](https://about.gitlab.com/2016/01/27/comparing-terms-gitlab-github-bitbucket/)
