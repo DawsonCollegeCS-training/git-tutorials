@@ -185,7 +185,7 @@ source : http://rogerdudler.github.io/git-guide
 * Remember when we said that git is *distributed*?
 * the changes have been committed to the local repository
 
-* If you started a new project (Hands-on tutorial 1 today), first create the remote repository (in GitHub) and associate it to your local repository
+* If you started a new project (Hands-on tutorial 1 today), first create the remote repository (in GitHub) and associate it with your local repository
 
 ```
    git remote add origin url
@@ -261,7 +261,7 @@ source : http://rogerdudler.github.io/git-guide
 
 * by default, you work in the master branch
 	* notice command prompt ( `master` )
-* but the master branch should reflect a <span style="color:blue">stable</span> load
+* but the master branch should reflect a <span style="color:blue">stable</span> content
 * development should take place in branches
 
 ---
