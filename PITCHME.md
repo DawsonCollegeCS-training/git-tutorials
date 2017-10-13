@@ -54,7 +54,7 @@
 
 #### every collaborator has a <span style="color:blue">complete</span> copy of the repository
 
-#### centralized server is not required, but greatly facilitates collaboration workflow
+#### <span style="color:blue">centralized</span> server is not required, but greatly facilitates collaboration workflow
 ---
 
 @title[GitBlargh]
@@ -109,12 +109,17 @@
 * create files
 * edit files
 
-##### You can use you favourite tools to create your content but note that git's revision features work with *text-based* files
+---
 
+@title[HLWorkflow2b]
+
+### High level workflow
+   
+#### 2. Make changes
+
+* You can use you favourite tools to create your content but note that git's revision features work with *text-based* files
 
 * HTML and Markdown formats have easy editors and are easy to learn
-
-* This presentation is made in markdown, ugliness is due to presenter, not the tool!
 
 ---
 
@@ -125,6 +130,12 @@
 #### 3. Decide which changes make up a new version, and add and commit them
 
 ##### A *version* in git-speak is a *commit*
+
+---
+
+@title[HLWorkflow3a]
+
+### Commits
 
 * A commit reflects the changes in the repository
 * Each commit is given a unique identifier
@@ -141,7 +152,7 @@
 
 #### 3. Decide which changes make up a new version, and add and commit them
 
-Some changes belong together in a commit. These changes are first **added** to a staging area
+Some changes belong together in a commit. These changes are first **added** to a staging area, then committed
 
 ```
 	git add filename.md
@@ -160,17 +171,17 @@ Some changes belong together in a commit. These changes are first **added** to a
 * tracked - committed
 * modified - file is changed from the version that git last tracked
 
-##### *source : http://rogerdudler.github.io/git-guide*
+###### source : http://rogerdudler.github.io/git-guide
 ---
 @title[HLWorkflow4]
 
-### Remember when we said that git is *distributed*?
+* Remember when we said that git is *distributed*?
 
 #### 4. Upload or *push* them to the remote repository
 
 * the changes have been committed to the local repository
 
-* If you started a project from scratch (Hands-on tutorial 1 today), you need to create the remote repository (in GitHub) and associate it to your local repository
+* If you started a new project (Hands-on tutorial 1 today), first create the remote repository (in GitHub) and associate it to your local repository
 
 ```
    git remote add origin url
@@ -183,7 +194,6 @@ Some changes belong together in a commit. These changes are first **added** to a
 
 @title[HLWorkflow4]
 
-#### Remember when we said that git is *distributed*?
 
 #### 4. Upload or *push* them to the remote repository
 
