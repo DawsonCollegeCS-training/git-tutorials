@@ -290,9 +290,9 @@ source: http://nvie.com/posts/a-successful-git-branching-model/
 
 * in our classes we are using protected branches to:
 	* enforce an industry-standard workflow
-	* introduce students to pull request documentations
+	* introduce students to pull request documentation
 	* ensure students review each others code
 	* be alerted when assignments are submitted
-	* provide feedback directly
+	* provide feedback
 
 
