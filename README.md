@@ -8,7 +8,7 @@
   - [What is git?](#what-is-git)
   - [How do I use git?](#how-do-i-use-git)
   - [Let's get started!](#tutorial-exercises-lets-get-started)
-    - [Presentation Slice Deck](#presentation-slide-deck)
+    - [Presentation Slide Deck](#presentation-slide-deck)
     - [Using git solo](#using-git-solo)
     - [Using git to collaborate](#using-git-to-collaborate)
   - [What we really learned](#what-we-really-learned)
