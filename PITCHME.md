@@ -165,11 +165,26 @@ A *version* in git-speak is a **commit**
 
 * A commit reflects the tracked changes in the repository
 * Each commit has a unique identifier
-* This facilitates:
-	* backtracking/reverting
-	* understanding the history of the project
-	* branching
-  * comparing two versions
+
+---
+
+@title[HLWorkflow3ab]
+
+### Commits Facilitate
+
+* backtracking/reverting
+* understanding the history of the project
+* branching
+* comparing two versions
+
+---
+
+@title[HLWorkflow3ab]
+
+### Comparing two versions
+
+![](github-images/diff.png)
+
 
 ---
 
@@ -288,7 +303,7 @@ source : http://rogerdudler.github.io/git-guide
 
 * by default, you work in the master branch
 	* notice command prompt ( `master` )
-* but the master branch should reflect a <span style="color:blue">stable</span> content
+* but the master branch should reflect <span style="color:blue">stable</span> content
 * development should take place in temporary branches
 
 ---
