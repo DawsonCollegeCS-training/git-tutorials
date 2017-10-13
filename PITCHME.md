@@ -8,7 +8,8 @@
 
 ![Image of comic](http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg)
 
-##### *source : http://smutch.github.io/VersionControlTutorial*
+source : http://smutch.github.io/VersionControlTutorial
+
 ---
 @title[Version Control1]
 
@@ -54,7 +55,7 @@
 
 #### every collaborator has a <span style="color:blue">complete</span> copy of the repository
 
-#### <span style="color:blue">centralized</span> server is not required, but greatly facilitates collaboration workflow
+#### centralized server is not required, but greatly facilitates <span style="color:blue">collaboration</span>
 ---
 
 @title[GitBlargh]
@@ -137,10 +138,10 @@
 
 ### Commits
 
-* A commit reflects the changes in the repository
+* A commit reflects the tracked changes in the repository
 * Each commit is given a unique identifier
 * This facilitates:
-	* understanding history of the project
+	* understanding the history of the project
 	* backtracking/reverting
 	* branching
 
@@ -169,16 +170,15 @@ Some changes belong together in a commit. These changes are first **added** to a
 * untracked - new file, not yet in staging area
 * staged - should be included in the next commit
 * tracked - committed
-* modified - file is changed from the version that git last tracked
+* modified - changed from the version that is tracked
 
-###### source : http://rogerdudler.github.io/git-guide
+source : http://rogerdudler.github.io/git-guide
 ---
 @title[HLWorkflow4]
 
-* Remember when we said that git is *distributed*?
-
 #### 4. Upload or *push* them to the remote repository
 
+* Remember when we said that git is *distributed*?
 * the changes have been committed to the local repository
 
 * If you started a new project (Hands-on tutorial 1 today), first create the remote repository (in GitHub) and associate it to your local repository
@@ -238,3 +238,40 @@ Some changes belong together in a commit. These changes are first **added** to a
 ---
 
 ## Let's do it!
+
+---
+@title[Branch]
+
+### Branches
+
+* branches are used to develop features in isolation
+* workflow = work in a branch, test, merge back into main branch when complete
+
+---
+@title[Master]
+
+### master Branch
+
+* by default, you will work in the master branch
+	* notice command prompt (master)
+* but the master branch should reflect a <span style="color:blue">stable</span> load
+* development should take place in branches
+
+---
+@title[nvie]
+
+![Image of branching model](http://nvie.com/img/git-model@2x.png)
+
+source: http://nvie.com/posts/a-successful-git-branching-model/
+
+---
+@title[protected]
+
+### Protected Branch
+
+* branches can be protected to ensure that only reviewed and approved changes are merged
+* in our classes we are using this as an oppurtunity to teach about:
+	* well documented pull requests
+	* code reviews
+
+
