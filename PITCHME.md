@@ -55,12 +55,12 @@ source : http://smutch.github.io/VersionControlTutorial
 
 #### <span style="color:grey">every collaborator has a </span><span style="color:cornflowerblue">complete</span> <span style="color:grey">copy of the repository</span>
 
-#### centralized server is not required, but greatly facilitates <span style="color:blue">collaboration</span>
+#### Teams <span style="color:blue">collaborate</span> by sending changes to one authoritative repository hosted on a server
 ---
 
 @title[GitBlargh]
 
-## Centralized Git Servers
+## Repository Hosting Services
 
 ### GitHub
 
@@ -69,30 +69,50 @@ source : http://smutch.github.io/VersionControlTutorial
 ### BitBucket
 
 ### ...
+
+---
+
+@title[LocalRemote]
+
+#### Local Repository and Remote Repository
+
+* **local**: on your computer
+* **remote**: on a server like github.com
+
+---
+
+@title[LocalRemote2]
+
+#### Typical usage
+
+* each of your computers (office, home) has a <span style="color:cornflowerblue">local</span> copy of a project repo
+* and you have one "authoritative" <span style="color:cornflowerblue">remote</span> copy on github.com
+
+
 ---
 
 @title[HLWorkflow1]
 
 ### High level workflow
 
-#### 1. Create or clone a repository (local or remote)
+#### 1. Create or clone a repository
 
 
 
 **Repository?** Project files as they change over time, version history, and other metadata
 
-   
+
 ---
 
 @title[HLWorkflow1a]
 
 
-#### 1. Create or clone a repository (local or remote)
+#### 1. Create or clone a repository
 
 * either start a project from scratch (Hands-on tutorial 1 today)
 
 ```
-   git init 
+   git init
 ```
 
 * or contribute to an existing project (Hands-on tutorial 2 today)
@@ -100,13 +120,13 @@ source : http://smutch.github.io/VersionControlTutorial
 ```
    git clone url
 ```
-   
+
 ---
 
 @title[HLWorkflow2]
 
 ### High level workflow
-   
+
 #### 2. Make changes
 
 * create files
@@ -117,10 +137,11 @@ source : http://smutch.github.io/VersionControlTutorial
 @title[HLWorkflow2b]
 
 ### High level workflow
-   
+
 #### 2. Make changes
 
-* Use your favourite tools to create your content but note that git's revision features work with *text-based* files
+* Use your favourite tools to create your content but note that git's revision features work
+best with *text-based* files
 
 * HTML and Markdown formats have editors and are easy to learn
 
@@ -148,6 +169,7 @@ A *version* in git-speak is a **commit**
 	* backtracking/reverting
 	* understanding the history of the project
 	* branching
+  * comparing two versions
 
 ---
 
@@ -171,12 +193,17 @@ Some changes belong together in a commit. These changes are first **added** to a
 
 ![Image of add and commit](http://rogerdudler.github.io/git-guide/img/trees.png)
 
-* untracked - new file, not yet in staging area
-* staged - should be included in the next commit
-* tracked - committed
-* modified - changed from the version that is tracked
-
 source : http://rogerdudler.github.io/git-guide
+---
+
+@title[HLWorkflow3c]
+
+* staged - should be included in the next new commit
+* tracked - has been previously committed (or added)
+* modified - changed since the last commit
+* untracked - files that git doesn't know about yet (not added or committed)
+
+
 ---
 @title[HLWorkflow4]
 
@@ -185,7 +212,7 @@ source : http://rogerdudler.github.io/git-guide
 * Remember when we said that git is *distributed*?
 * the changes have been committed to the local repository
 
-* If you started a new project (Hands-on tutorial 1 today), first create the remote repository (in GitHub) and associate it with your local repository
+* If you started a new project (Hands-on tutorial 1 today), create a remote repository (in GitHub) and associate it with your local repository
 
 ```
    git remote add origin url
@@ -230,7 +257,7 @@ source : http://rogerdudler.github.io/git-guide
 ### High level workflow summary
 
 #### 1. Create a repository (local or remote)
-   
+
 #### 2. Make changes
 
 #### 3. Decide which changes make up a new version, and add and commit them
@@ -252,7 +279,7 @@ source : http://rogerdudler.github.io/git-guide
 * use branches!
 	* develop features in isolation
 	* frequent commits as code is completed
-* once the feature is tested, merge back into main branch
+* once the feature is tested or approved by team, merge back into main branch
 
 ---
 @title[Master]
@@ -262,7 +289,7 @@ source : http://rogerdudler.github.io/git-guide
 * by default, you work in the master branch
 	* notice command prompt ( `master` )
 * but the master branch should reflect a <span style="color:blue">stable</span> content
-* development should take place in branches
+* development should take place in temporary branches
 
 ---
 @title[Branches picture]
@@ -294,5 +321,3 @@ source: http://nvie.com/posts/a-successful-git-branching-model/
 	* ensure students review each others code
 	* be alerted when assignments are submitted
 	* provide feedback
-
-
