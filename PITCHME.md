@@ -41,7 +41,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ## What is git?
 
-### <span style="color:grey">*free* and *open source* </span><span style="color:cornflowerblue">distributed</span> <span style="color:grey">*version control* system</span>
+### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
 
 #### every collaborator has a <span style="color:blue">complete</span> copy of the repository
 
@@ -53,7 +53,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
 
-#### every collaborator has a <span style="color:blue">complete</span> copy of the repository
+#### <span style="color:grey">every collaborator has a </span><span style="color:cornflowerblue">complete</span> <span style="color:grey">copy of the repository</span>
 
 #### centralized server is not required, but greatly facilitates <span style="color:blue">collaboration</span>
 ---
@@ -245,7 +245,7 @@ source : http://rogerdudler.github.io/git-guide
 ### Branches
 
 * branches are used to develop features in isolation
-* work in a branch is unstable, merge back into main branch when complete
+* work in a branch is unstable, merge back into main branch only when stable
 
 ---
 @title[Master]
@@ -253,7 +253,7 @@ source : http://rogerdudler.github.io/git-guide
 ### master Branch
 
 * by default, you work in the master branch
-	* notice command prompt (`master`)
+	* notice command prompt ( `master` )
 * but the master branch should reflect a <span style="color:blue">stable</span> load
 * development should take place in branches
 
@@ -270,7 +270,7 @@ source: http://nvie.com/posts/a-successful-git-branching-model/
 ### Protected Branch
 
 * branches can be protected to ensure that only reviewed and approved changes are merged
-* in our classes we are using this as an oppurtunity to teach about:
+* in our classes we are using this as an opportunity to teach about:
 	* well documented pull requests
 	* code reviews
 
