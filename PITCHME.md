@@ -33,7 +33,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ## What is git?
 
-### free and open source distributed version control system
+### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
 
 ---
 
@@ -41,7 +41,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ## What is git?
 
-### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
+### <span style="color:grey">free and open source distributed version control system</span>
 
 #### every collaborator has a <span style="color:blue">complete</span> copy of the repository
 
@@ -51,7 +51,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ## What is git?
 
-### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
+### <span style="color:grey">free and open source distributed version control system</span>
 
 #### <span style="color:grey">every collaborator has a </span><span style="color:cornflowerblue">complete</span> <span style="color:grey">copy of the repository</span>
 
@@ -76,6 +76,8 @@ source : http://smutch.github.io/VersionControlTutorial
 ### High level workflow
 
 #### 1. Create or clone a repository (local or remote)
+
+
 
 **Repository?** Project files as they change over time, version history, and other metadata
 
@@ -118,9 +120,9 @@ source : http://smutch.github.io/VersionControlTutorial
    
 #### 2. Make changes
 
-* You can use you favourite tools to create your content but note that git's revision features work with *text-based* files
+* Use your favourite tools to create your content but note that git's revision features work with *text-based* files
 
-* HTML and Markdown formats have easy editors and are easy to learn
+* HTML and Markdown formats have editors and are easy to learn
 
 ---
 
@@ -130,7 +132,9 @@ source : http://smutch.github.io/VersionControlTutorial
 
 #### 3. Decide which changes make up a new version, and add and commit them
 
-##### A *version* in git-speak is a *commit*
+
+
+A *version* in git-speak is a **commit**
 
 ---
 
@@ -139,10 +143,10 @@ source : http://smutch.github.io/VersionControlTutorial
 ### Commits
 
 * A commit reflects the tracked changes in the repository
-* Each commit is given a unique identifier
+* Each commit has a unique identifier
 * This facilitates:
-	* understanding the history of the project
 	* backtracking/reverting
+	* understanding the history of the project
 	* branching
 
 ---
@@ -237,15 +241,18 @@ source : http://rogerdudler.github.io/git-guide
 
 ---
 
-## Let's do it!
+## Hands on Tutorial 1!
 
 ---
 @title[Branch]
 
 ### Branches
 
-* branches are used to develop features in isolation
-* work in a branch is unstable, merge back into main branch only when stable
+* work-in-progress is by definition unstable
+* use branches!
+	* develop features in isolation
+	* frequent commits as code is completed
+* once the feature is tested, merge back into main branch
 
 ---
 @title[Master]
@@ -275,9 +282,17 @@ source: http://nvie.com/posts/a-successful-git-branching-model/
 
 ### Protected Branch
 
-* branches can be protected to ensure that only reviewed and approved changes are merged
-* in our classes we are using this as an opportunity to teach about:
-	* well documented pull requests
-	* code reviews
+##### branches can be protected to ensure that only <span style="color:blue">reviewed and approved</span> changes are merged
+---
+@title[protected]
+
+### Protected Branch
+
+* in our classes we are using protected branches to:
+	* enforce an industry-standard workflow
+	* introduce students to pull request documentations
+	* ensure students review each others code
+	* be alerted when assignments are submitted
+	* provide feedback directly
 
 
