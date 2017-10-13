@@ -41,7 +41,7 @@ source : http://smutch.github.io/VersionControlTutorial
 
 ## What is git?
 
-### *free* and *open source* <span style="color:blue">distributed</span> *version control* system
+### <span style="color:grey">*free* and *open source* </span><span style="color:cornflowerblue">distributed</span> <span style="color:grey">*version control* system</span>
 
 #### every collaborator has a <span style="color:blue">complete</span> copy of the repository
 
@@ -96,7 +96,7 @@ source : http://smutch.github.io/VersionControlTutorial
 * or contribute to an existing project (Hands-on tutorial 2 today)
 
 ```
-   git clone
+   git clone url
 ```
    
 ---
@@ -200,7 +200,7 @@ source : http://rogerdudler.github.io/git-guide
 * If you are contributing to an existing project (Hands-on tutorial 2 today)
 
 ```
-   git push origin master
+   git push origin branchname
 ```
 
 ---
@@ -245,15 +245,15 @@ source : http://rogerdudler.github.io/git-guide
 ### Branches
 
 * branches are used to develop features in isolation
-* workflow = work in a branch, test, merge back into main branch when complete
+* work in a branch is unstable, merge back into main branch when complete
 
 ---
 @title[Master]
 
 ### master Branch
 
-* by default, you will work in the master branch
-	* notice command prompt (master)
+* by default, you work in the master branch
+	* notice command prompt (`master`)
 * but the master branch should reflect a <span style="color:blue">stable</span> load
 * development should take place in branches
 
