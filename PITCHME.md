@@ -258,6 +258,12 @@ source : http://rogerdudler.github.io/git-guide
 * development should take place in branches
 
 ---
+@title[Branches picture]
+
+![Image of branches](https://cdn-images-1.medium.com/max/1600/1*coGkd6B_yXvZ1PKXtwra3w.jpeg)
+
+source : https://hackernoon.com/in-defense-of-version-control-f8d8a0d7e23f
+---
 @title[nvie]
 
 ![Image of branching model](http://nvie.com/img/git-model@2x.png)
