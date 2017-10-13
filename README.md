@@ -8,6 +8,7 @@
   - [What is git?](#what-is-git)
   - [How do I use git?](#how-do-i-use-git)
   - [Let's get started!](#tutorial-exercises-lets-get-started)
+    - [Presentation Slice Deck](#presentation-slide-deck)
     - [Using git solo](#using-git-solo)
     - [Using git to collaborate](#using-git-to-collaborate)
   - [What we really learned](#what-we-really-learned)
@@ -39,14 +40,16 @@ _plain-text_ files like software source code.
 
 These tutorials use git commands to create and update a local and a remote repository.
 
-## Tutorial Exercises, Let's get started!
+## Let's get started!
 
-In the first lab, you'll create a repository on your computer and use it to learn some git
+### [Presentation Slide Deck](https://gitpitch.com/DawsonCollegeCS-training/ped-day-2017#/)
+
+In the first tutorial exercise, you'll create a repository on your computer and use it to learn some git
 commands. Then you'll also publish your repository to a remote server like github.com.
 
 ### [Using git solo](01_basics_stripped.md)
 
-In the second lab you will work with a partner to get a
+In the second tutorial exercise, you will work with a partner to get a
 glimpse of how git is used for collaboration.
 
 ### [Using git to collaborate](02_mistakes_branches.md)
