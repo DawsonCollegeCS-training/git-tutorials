@@ -112,14 +112,9 @@
 ##### You can use you favourite tools to create your content but note that git's revision features work with *text-based* files
 
 
-##### Are you thinking it's too hard to learn?
+* HTML and Markdown formats have easy editors and are easy to learn
 
-HTML and Markdown formats have easy editors and are easy to learn
-
-
-##### Are you thinking it will be ugly?
-
-This presentation is made in markdown, ugliness is due to presenter, not the tool!
+* This presentation is made in markdown, ugliness is due to presenter, not the tool!
 
 ---
 
@@ -138,14 +133,6 @@ This presentation is made in markdown, ugliness is due to presenter, not the too
 	* backtracking/reverting
 	* branching
 
-Some changes belong together in a commit. These changes are first **added** to a staging area
-
-```
-	git add filename.md
-
-	git commit -m "explain the changes that make up this commit"
-
-```
 ---
 
 @title[HLWorkflow3b]
@@ -226,7 +213,7 @@ Some changes belong together in a commit. These changes are first **added** to a
 ---
 @title[HLWorkflow4b]
 
-### High level workflow
+### High level workflow summary
 
 #### 1. Create a repository (local or remote)
    
@@ -240,4 +227,4 @@ Some changes belong together in a commit. These changes are first **added** to a
 
 ---
 
-## Go for it!
+## Let's do it!
