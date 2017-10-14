@@ -11,6 +11,7 @@
     - [Presentation Slide Deck](#presentation-slide-deck)
     - [Using git solo](#using-git-solo)
     - [Using git to collaborate](#using-git-to-collaborate)
+  - [More details, more tutorials](#more-details-more-tutorials)
   - [What we really learned](#what-we-really-learned)
   - [Other repository servers](#other-repository-servers)
 
@@ -50,9 +51,22 @@ commands. Then you'll also publish your repository to a remote server like githu
 ### [Using git solo](01_basics_stripped.md)
 
 In the second tutorial exercise, you will work with a partner to get a
-glimpse of how git is used for collaboration.
 
+glimpse of how git is used for collaboration.
 ### [Using git to collaborate](02_mistakes_branches.md)
+
+## More details, more tutorials
+
+This set of tutorials is a stripped down version of a couple of the tutorials we assign to our students.
+If you want to redo with text explanations & instructions or continue with more advanced information you can look at the files in tis directory or here is a small
+[menu of the main tutorials](Menu_student_tutorials.md)
+
+It also contains an write up of the concept of the protected branch workflow.
+
+Thank you for listening to us, we hope you enjoyed the workshop.
+Please feel free to contact us if
+you have questions (or corrections) about the tutorials or our use of git.
+
 ## What we really learned
 
  <img src="https://imgs.xkcd.com/comics/git_2x.png" width=300 alt="xkcd on git"/>
