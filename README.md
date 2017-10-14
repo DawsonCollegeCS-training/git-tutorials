@@ -58,8 +58,8 @@ glimpse of how git is used for collaboration.
 ## More details, more tutorials
 
 This set of tutorials is a stripped down version of a couple of the tutorials we assign to our students.
-If you want to redo with text explanations & instructions or continue with more advanced information you can look at the files in tis directory or here is a small
-[menu of the main tutorials](Menu_student_tutorials.md)
+If you want to redo with text explanations & instructions or continue with more advanced information you can look at the files in this directory or here is a small
+[menu of the main tutorials](MENU_student_tutorials.md)
 
 It also contains an write up of the concept of the protected branch workflow.
 
