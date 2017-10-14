@@ -18,7 +18,9 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Intro to git  PED Day 2017
+# Intro to git
+
+
 
 ## What is this?
 
@@ -39,29 +41,44 @@ _plain-text_ files like software source code.
 
 ## How do I use git?
 
-These tutorials use git commands to create and update a local and a remote repository.
+Prequisite: it helps to have a tiny bit of experience with [command-line
+tools](http://linuxcommand.org/lc3_lts0010.php). You can try the [free interactive bash
+tutorial](https://www.codecademy.com/learn/learn-the-command-line).
+
+We assume you have git installed. If not, you can download it here: <https://git-scm.com/downloads>
+
+These tutorials use git commands to create and update a local and a remote repository. We assume
+you are using `git-bash` on Windows or the default terminal on Mac OS and Linux.
 
 ## Let's get started!
 
-### [Presentation Slide Deck](https://gitpitch.com/DawsonCollegeCS-training/ped-day-2017#/)
+### Presentation Slide Deck
 
-In the first tutorial exercise, you'll create a repository on your computer and use it to learn some git
-commands. Then you'll also publish your repository to a remote server like github.com.
+<https://gitpitch.com/DawsonCollegeCS-training/ped-day-2017#/>
 
-### [Using git solo](01_basics_stripped.md)
+### Using git solo
 
-In the second tutorial exercise, you will work with a partner to get a
+*   [Tutorial 1](01_basics_stripped.md)
 
-glimpse of how git is used for collaboration.
-### [Using git to collaborate](02_mistakes_branches.md)
+    *   In the first tutorial exercise, you'll create a repository on your computer and use it to   
+        learn some git
+        commands. Then you'll also publish your repository to a remote server like github.com.
 
-## More details, more tutorials
+### Using git to collaborate
 
-This set of tutorials is a stripped down version of a couple of the tutorials we assign to our students.
-If you want to redo with text explanations & instructions or continue with more advanced information you can look at the files in this directory or here is a small
-[menu of the main tutorials](MENU_student_tutorials.md)
+*   [Tutorial 2](02_branches_stripped.md)
 
-It also contains an write up of the concept of the protected branch workflow.
+    *   In the second tutorial exercise, you will work with a partner to get a
+        glimpse of how git is used for collaboration.
+
+
+## More details, more tutorials, course materials
+
+The set of tutorials above is a stripped down version of a couple of the tutorials we assign to our students.
+If you want to redo with text explanations & instructions or continue with more advanced information you can look at the other files in this repository, or here is a small
+[menu of the main student tutorials](MENU_student_tutorials.md)
+
+It also contains a write up of the concept of the protected branch workflow.
 
 Thank you for listening to us, we hope you enjoyed the workshop.
 Please feel free to contact us if
