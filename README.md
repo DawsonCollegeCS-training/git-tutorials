@@ -54,7 +54,7 @@ you are using `git-bash` on Windows or the default terminal on Mac OS and Linux.
 
 ### Presentation Slide Deck
 
-<https://gitpitch.com/DawsonCollegeCS-training/ped-day-2017#/>
+<https://gitpitch.com/DawsonCollegeCS-training/ped-day-2017/ped-day-2017#/>
 
 ### Using git solo
 
