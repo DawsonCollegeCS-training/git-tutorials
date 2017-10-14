@@ -15,6 +15,10 @@ Feel free to look at all of the files in the repo; these are the main ones.
   - [teacher setup instructions for branches and mistakes](02_03_setup.md)
 - [collaboration using git](03_collaboration.md)
 
+Note that our tutorials are used with both GitHub and GitLab. To make the tutorials
+generic, we sometimes use the informal term _gitblarg_ to refer to any repository hosting
+service.
+
 ## Overviews
 
 - [what is protected branch workflow](protected_branch_workflow.md)
