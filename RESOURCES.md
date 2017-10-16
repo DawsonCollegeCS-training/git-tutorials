@@ -11,6 +11,10 @@
 * [basic concepts git tutorial](https://try.github.io/levels/1/challenges/1)  (there are others that are paid)
 * [git branching tutorial](https://learngitbranching.js.org/)
 
+## Other Tutorials
+
+* [Browser only git tutorial](https://guides.github.com/activities/hello-world/)  Thanks to Maja
+
 ## Troubleshooting and misc
 
 * [git flight rules](https://github.com/k88hudson/git-flight-rules)  Thanks to  Maja
@@ -18,6 +22,6 @@
 * [differences between github/gitlab/bitbucket](https://about.gitlab.com/2016/01/27/comparing-terms-gitlab-github-bitbucket/)
 * [Choosing a license](https://opensource.guide/legal/) 
 
-## Books
+## Books 
 
 * [Git Pro (2014)](https://git-scm.com/book/en/v2)  Thanks to Ken
