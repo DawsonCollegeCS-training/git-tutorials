@@ -23,3 +23,7 @@ service.
 
 - [what is protected branch workflow](protected_branch_workflow.md)
   - We give this document to our students as a guide to teamwork using git
+  
+## Other 
+
+[A list of resources](RESOURCES.md)
