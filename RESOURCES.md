@@ -10,7 +10,7 @@
 
 * [basic concepts git tutorial](https://try.github.io/levels/1/challenges/1)  (there are others that are paid)
 * [git branching tutorial](https://learngitbranching.js.org/)
-
+* [Visualising git concepts](http://onlywei.github.io/explain-git-with-d3)
 ## Other Tutorials
 
 * [Browser only git tutorial](https://guides.github.com/activities/hello-world/)  Thanks to Maja
